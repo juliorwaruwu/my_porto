@@ -1,0 +1,63 @@
+/* Optional 3D hover effects driven by body classes */
+
+/* Effect 1: Card Flip */
+.effect-flip .skill-card-3d,
+.effect-flip .contact-card,
+.effect-flip .about-stat-card {
+    transform-style: preserve-3d;
+}
+.effect-flip .skill-card-3d:hover,
+.effect-flip .contact-card:hover,
+.effect-flip .about-stat-card:hover {
+    transform: perspective(800px) rotateY(8deg) scale(1.03);
+}
+.effect-flip .project-card:hover {
+    transform: perspective(800px) rotateY(3deg) scale(1.01);
+}
+
+/* Effect 2: Card Lift */
+.effect-lift .skill-card-3d,
+.effect-lift .contact-card {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.effect-lift .skill-card-3d:hover,
+.effect-lift .contact-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+.effect-lift .project-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Effect 3: Card Glow */
+.effect-glow .skill-card-3d,
+.effect-glow .contact-card {
+    transition: all 0.4s ease;
+}
+.effect-glow .skill-card-3d:hover,
+.effect-glow .contact-card:hover {
+    box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-glow);
+    transform: scale(1.02);
+}
+.effect-glow .project-card:hover {
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: scale(1.01);
+}
+
+/* Effect 4: Card Tilt */
+.effect-tilt .skill-card-3d,
+.effect-tilt .contact-card,
+.effect-tilt .timeline-card,
+.effect-tilt .exp-card,
+.effect-tilt .about-detail-card {
+    transform-style: preserve-3d;
+}
+
+/* Effect 5: Card Rotate */
+.effect-rotate .contact-card:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+}
+.effect-rotate .project-card:hover {
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg) scale(1.01);
+}

@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Julior.dev - Software Engineer portfolio. Full-Stack Developer & Data Analytics Enthusiast.">
     <title>Julior.dev - Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/variables.css">
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/layout.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/pages.css">
+    <link rel="stylesheet" href="src/css/effects.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <canvas id="particles"></canvas>
     <div class="cursor-glow" id="cursorGlow"></div>
@@ -51,7 +62,7 @@
             <div class="sidebar-profile">
                 <div class="profile-photo">
                     <!-- <i class="fas fa-user"></i> -->
-                     <img src="assets/images/profile/profile.png" alt="Julior Dev">
+                    <img src="assets/images/profile/profile.png" alt="Julior Dev">
                 </div>
                 <h3 class="profile-name">Julior</h3>
                 <p class="profile-title">Software Engineer</p>
@@ -93,13 +104,14 @@
             <section id="home" class="page active">
                 <div class="page-banner">
                     <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    HOME PAGE 
+                    HOME PAGE
                 </div>
                 <div class="hero-section">
                     <div class="hero-greeting" id="typingGreeting"></div>
                     <h1 class="hero-title">
                         Hello I am <span class="highlight">Julior</span><br>
-                        <span class="hero-subtitle">I'm a <span class="rotating-text" id="rotatingText">Full-Stack Developer</span></span>
+                        <span class="hero-subtitle">I'm a <span class="rotating-text" id="rotatingText">Full-Stack
+                                Developer</span></span>
                     </h1>
                     <div class="hero-icons">
                         <span class="hero-icon">
@@ -115,7 +127,8 @@
                         <i class="fas fa-rocket"></i> Explore Projects
                     </button>
                     <p class="hero-description">
-                        Full-Stack Developer & Data Analytics Enthusiast crafting modern, scalable web and mobile applications that solve real-world problems.
+                        Full-Stack Developer & Data Analytics Enthusiast crafting modern, scalable web and mobile
+                        applications that solve real-world problems.
                     </p>
                 </div>
                 <div class="featured-skills">
@@ -147,14 +160,14 @@
             <section id="skills" class="page">
                 <div class="page-banner">
                     <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    SKILLS PAGE 
+                    SKILLS PAGE
                 </div>
                 <h1 class="page-title">Technical Inventory</h1>
                 <p class="page-description">
-                    A comprehensive overview of my technical skills, tools, and technologies 
+                    A comprehensive overview of my technical skills, tools, and technologies
                     I've mastered throughout my career as a software engineer.
                 </p>
-                
+
                 <div class="skills-grid">
                     <div class="skill-category-card" data-tilt>
                         <div class="skill-card-glow"></div>
@@ -172,7 +185,7 @@
                             <i class="fas fa-desktop"></i>
                         </div>
                     </div>
-                    
+
                     <div class="skill-category-card" data-tilt>
                         <div class="skill-card-glow"></div>
                         <h3><i class="fas fa-server"></i> Backend</h3>
@@ -188,7 +201,7 @@
                             <i class="fas fa-cogs"></i>
                         </div>
                     </div>
-                    
+
                     <div class="skill-category-card" data-tilt>
                         <div class="skill-card-glow"></div>
                         <h3><i class="fas fa-cloud"></i> Tools & Database</h3>
@@ -205,17 +218,18 @@
                             <i class="fas fa-tools"></i>
                         </div>
                     </div>
-                    
+
                     <div class="system-arch-card" data-tilt>
                         <div class="skill-card-glow"></div>
                         <h3><i class="fas fa-project-diagram"></i> System Architecture</h3>
-                        <p>Designing scalable, maintainable, and efficient system architectures that handle high traffic and complex data flows.</p>
+                        <p>Designing scalable, maintainable, and efficient system architectures that handle high traffic
+                            and complex data flows.</p>
                         <div class="arch-chart">
                             <i class="fas fa-chart-pie"></i>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="skills-footer-icons">
                     <div class="skill-icon-item"><i class="fab fa-java"></i><span>Java</span></div>
                     <div class="skill-icon-item"><i class="fab fa-python"></i><span>Python</span></div>
@@ -233,9 +247,10 @@
                 <p class="section-label">PORTFOLIO</p>
                 <h1 class="page-title">Featured Projects</h1>
                 <p class="page-description">
-                    A showcase of my recent work and personal projects that demonstrate my skills in full-stack development, mobile development, data analytics, and software engineering.
+                    A showcase of my recent work and personal projects that demonstrate my skills in full-stack
+                    development, mobile development, data analytics, and software engineering.
                 </p>
-                
+
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -244,11 +259,30 @@
                         <div class="project-info">
                             <div class="project-badge">Featured</div>
                             <h3>PersonaAI</h3>
-                            <p>AI-powered MBTI personality assessment platform providing insights on career compatibility, strengths, relationships, and personal growth.</p>
+                            <p>AI-powered MBTI personality assessment platform providing insights on career
+                                compatibility, strengths, relationships, and personal growth.</p>
                             <div class="tech-stack">
                                 <span>React</span><span>Tailwind CSS</span><span>AI Integration</span>
                             </div>
-                            <a href="https://personaaijv.vercel.app" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://personaaijv.vercel.app" class="project-cta">Explore Project <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/jflow.png" alt="JFlow">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">Featured</div>
+                            <h3>JFlow</h3>
+                            <p>Financial analytics platform analyzing spending patterns, predicting trends, and
+                                supporting smarter decisions through ML.</p>
+                            <div class="tech-stack">
+                                <span>React</span><span>Tailwind
+                                    CSS</span><span>FastAPI</span><span>MySQL</span><span>Supabase</span>
+                            </div>
+                            <a href="https://jflow07.vercel.app/" class="project-cta">Explore Project <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -258,7 +292,8 @@
                         </div>
                         <div class="project-info">
                             <h3>Flowva</h3>
-                            <p>Personal finance management platform for tracking income, expenses, budgets, and visualizing financial performance through dashboards.</p>
+                            <p>Personal finance management platform for tracking income, expenses, budgets, and
+                                visualizing financial performance through dashboards.</p>
                             <div class="tech-stack">
                                 <span>Flutter</span><span>Laravel</span><span>PostgreSQL</span>
                             </div>
@@ -272,7 +307,8 @@
                         </div>
                         <div class="project-info">
                             <h3>Finexa</h3>
-                            <p>Mobile expense tracking app for recording transactions, categorizing spending, and gaining financial behavior insights.</p>
+                            <p>Mobile expense tracking app for recording transactions, categorizing spending, and
+                                gaining financial behavior insights.</p>
                             <div class="tech-stack">
                                 <span>Flutter</span><span>Firebase</span>
                             </div>
@@ -286,23 +322,10 @@
                         </div>
                         <div class="project-info">
                             <h3>Sportify</h3>
-                            <p>Sports marketplace connecting buyers and sellers of equipment, apparel, and accessories with seamless browsing.</p>
+                            <p>Sports marketplace connecting buyers and sellers of equipment, apparel, and accessories
+                                with seamless browsing.</p>
                             <div class="tech-stack">
                                 <span>Flutter</span><span>Firebase</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/finovate.png" alt="Finovate">
-                        </div>
-                        <div class="project-info">
-                            <h3>Finovate</h3>
-                            <p>Financial analytics platform analyzing spending patterns, predicting trends, and supporting smarter decisions through ML.</p>
-                            <div class="tech-stack">
-                                <span>React</span><span>Tailwind CSS</span><span>FastAPI</span><span>MySQL</span><span>Pandas</span>
                             </div>
                             <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -314,7 +337,8 @@
                         </div>
                         <div class="project-info">
                             <h3>Studify</h3>
-                            <p>Study productivity app with scheduling, task management, reminders, and Pomodoro Timer to improve focus.</p>
+                            <p>Study productivity app with scheduling, task management, reminders, and Pomodoro Timer to
+                                improve focus.</p>
                             <div class="tech-stack">
                                 <span>Flutter</span><span>Firebase</span>
                             </div>
@@ -323,12 +347,15 @@
                     </div>
 
                     <div class="project-card">
-                        <div class="project-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-dark),#1a1a2e);">
-                            <i class="fas fa-graduation-cap" style="font-size:2.5rem;color:var(--accent);opacity:0.6;"></i>
+                        <div class="project-image"
+                            style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-dark),#1a1a2e);">
+                            <i class="fas fa-graduation-cap"
+                                style="font-size:2.5rem;color:var(--accent);opacity:0.6;"></i>
                         </div>
                         <div class="project-info">
                             <h3>Student Registration System</h3>
-                            <p>Web-based system digitalizing university admissions with streamlined workflows and an integrated admin dashboard.</p>
+                            <p>Web-based system digitalizing university admissions with streamlined workflows and an
+                                integrated admin dashboard.</p>
                             <div class="tech-stack">
                                 <span>Java</span><span>Spring Boot</span><span>MySQL</span>
                             </div>
@@ -342,13 +369,13 @@
             <section id="experience" class="page">
                 <div class="page-banner">
                     <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    TIMELINE PAGE 
+                    TIMELINE PAGE
                 </div>
                 <h1 class="page-title">Professional Experience</h1>
-                
+
                 <div class="timeline">
                     <div class="timeline-line"></div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-node"></div>
                         <div class="timeline-card" data-tilt>
@@ -356,13 +383,14 @@
                                 <i class="fas fa-calendar-alt"></i> 2026 – Present
                             </div>
                             <h3>Data Analyst Intern</h3>
-                            <p>Supporting data analysis and software investigation projects by processing datasets, identifying patterns, and transforming information into actionable insights.</p>
+                            <p>Supporting data analysis and software investigation projects by processing datasets,
+                                identifying patterns, and transforming information into actionable insights.</p>
                             <div class="tech-stack">
                                 <span>Python</span><span>Data Analytics</span><span>Reporting Tools</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-node"></div>
                         <div class="timeline-card" data-tilt>
@@ -370,13 +398,14 @@
                                 <i class="fas fa-calendar-alt"></i> 2026 – June 2026
                             </div>
                             <h3>Dormitory Person in Charge (PIC)</h3>
-                            <p>Coordinating dormitory operations and ensuring effective communication between students and university management.</p>
+                            <p>Coordinating dormitory operations and ensuring effective communication between students
+                                and university management.</p>
                             <div class="tech-stack">
                                 <span>Leadership</span><span>Communication</span><span>Organization</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-node"></div>
                         <div class="timeline-card" data-tilt>
@@ -384,13 +413,14 @@
                                 <i class="fas fa-calendar-alt"></i> 2025 – Present
                             </div>
                             <h3>Head of Volleyball Club</h3>
-                            <p>Leading organizational planning, coordinating training sessions, and managing team development for the volleyball club.</p>
+                            <p>Leading organizational planning, coordinating training sessions, and managing team
+                                development for the volleyball club.</p>
                             <div class="tech-stack">
                                 <span>Leadership</span><span>Team Management</span><span>Strategic Planning</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-node"></div>
                         <div class="timeline-card" data-tilt>
@@ -398,19 +428,22 @@
                                 <i class="fas fa-calendar-alt"></i> 2024 – Present
                             </div>
                             <h3>Software Development Projects</h3>
-                            <p>Designed and developed multiple full-stack web and mobile applications using React, Flutter, Spring Boot, Laravel, and MySQL.</p>
+                            <p>Designed and developed multiple full-stack web and mobile applications using React,
+                                Flutter, Spring Boot, Laravel, and MySQL.</p>
                             <div class="tech-stack">
-                                <span>React</span><span>Flutter</span><span>Spring Boot</span><span>Laravel</span><span>Firebase</span><span>MySQL</span>
+                                <span>React</span><span>Flutter</span><span>Spring
+                                    Boot</span><span>Laravel</span><span>Firebase</span><span>MySQL</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="experience-cards">
                     <div class="exp-card" data-tilt>
                         <div class="exp-card-icon"><i class="fas fa-laptop-code"></i></div>
                         <h3>Full-Stack Development</h3>
-                        <p>Building scalable web and mobile applications using modern frameworks like React, Flutter, Spring Boot, and Laravel.</p>
+                        <p>Building scalable web and mobile applications using modern frameworks like React, Flutter,
+                            Spring Boot, and Laravel.</p>
                     </div>
                     <div class="exp-card devops" data-tilt>
                         <div class="exp-card-image">
@@ -430,11 +463,12 @@
             <section id="about" class="page">
                 <div class="page-banner">
                     <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    ABOUT PAGE 
+                    ABOUT PAGE
                 </div>
                 <h1 class="page-title">About Me</h1>
                 <p class="page-description">
-                    Get to know the person behind the code. My journey, passions, and what drives me to create exceptional software.
+                    Get to know the person behind the code. My journey, passions, and what drives me to create
+                    exceptional software.
                 </p>
 
                 <div class="about-grid">
@@ -444,12 +478,17 @@
                         </div>
                         <div class="about-content">
                             <h2>Julior Dev</h2>
-                            <p class="about-role">Full-Stack Developer | Mobile Developer | Data Analytics Enthusiast</p>
-                            <p class="about-bio">
-                                Full-Stack Developer with a passion for building modern, scalable applications. Experienced in designing and developing web and mobile solutions using React, Flutter, Spring Boot, and Laravel.
+                            <p class="about-role">Full-Stack Developer | Mobile Developer | Data Analytics Enthusiast
                             </p>
                             <p class="about-bio">
-                                Skilled in data analytics, software architecture, and creating intuitive user experiences. Continuously exploring emerging technologies to build impactful digital products.
+                                Full-Stack Developer with a passion for building modern, scalable applications.
+                                Experienced in designing and developing web and mobile solutions using React, Flutter,
+                                Spring Boot, and Laravel.
+                            </p>
+                            <p class="about-bio">
+                                Skilled in data analytics, software architecture, and creating intuitive user
+                                experiences. Continuously exploring emerging technologies to build impactful digital
+                                products.
                             </p>
                             <p class="about-bio">
                                 I believe great software delivers meaningful value and exceptional user experiences.
@@ -488,17 +527,23 @@
                         <div class="about-detail-card" data-tilt>
                             <div class="detail-icon"><i class="fas fa-bullseye"></i></div>
                             <h3>Mission</h3>
-                            <p>To create innovative software solutions that address real-world challenges while continuously expanding my technical expertise in software engineering, full-stack development, and data analytics.</p>
+                            <p>To create innovative software solutions that address real-world challenges while
+                                continuously expanding my technical expertise in software engineering, full-stack
+                                development, and data analytics.</p>
                         </div>
                         <div class="about-detail-card" data-tilt>
                             <div class="detail-icon"><i class="fas fa-eye"></i></div>
                             <h3>Vision</h3>
-                            <p>To become a well-rounded software engineer who builds impactful digital products that deliver meaningful value, exceptional user experiences, and contribute to technological advancement.</p>
+                            <p>To become a well-rounded software engineer who builds impactful digital products that
+                                deliver meaningful value, exceptional user experiences, and contribute to technological
+                                advancement.</p>
                         </div>
                         <div class="about-detail-card" data-tilt>
                             <div class="detail-icon"><i class="fas fa-heart"></i></div>
                             <h3>Passion</h3>
-                            <p>Building modern, scalable applications using clean architecture and intuitive design. Every project is an opportunity to learn, grow, and create something that makes a difference.</p>
+                            <p>Building modern, scalable applications using clean architecture and intuitive design.
+                                Every project is an opportunity to learn, grow, and create something that makes a
+                                difference.</p>
                         </div>
                     </div>
 
@@ -542,7 +587,8 @@
                 </div>
                 <h1 class="page-title">Get In Touch</h1>
                 <p class="page-description">
-                    I'm always open to discussing new projects or creative ideas. Let's connect and build something amazing together.
+                    I'm always open to discussing new projects or creative ideas. Let's connect and build something
+                    amazing together.
                 </p>
 
                 <div class="contact-grid">
@@ -564,7 +610,8 @@
                         <span class="contact-label">Reply within 24 hours</span>
                     </a>
 
-                    <a href="https://maps.google.com/?q=Bekasi,Indonesia" target="_blank" class="contact-card location" data-tilt>
+                    <a href="https://maps.google.com/?q=Bekasi,Indonesia" target="_blank" class="contact-card location"
+                        data-tilt>
                         <div class="contact-icon-wrapper">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -582,7 +629,8 @@
                         <span class="contact-label">Open source contributor</span>
                     </a>
 
-                    <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="contact-card linkedin" data-tilt>
+                    <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="contact-card linkedin"
+                        data-tilt>
                         <div class="contact-icon-wrapper">
                             <i class="fab fa-linkedin-in"></i>
                         </div>
@@ -639,7 +687,7 @@
                 </div>
                 <h1 class="page-title">Settings</h1>
                 <p class="page-description">
-                    Customize your experience. Change themes, languages, and appearance 
+                    Customize your experience. Change themes, languages, and appearance
                     to match your personal preferences.
                 </p>
 
@@ -655,35 +703,43 @@
                         </div>
                         <div class="theme-grid">
                             <div class="theme-option active" data-theme="indigo">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #6366f1, #a855f7)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #6366f1, #a855f7)"></div>
                                 <span>Indigo</span>
                             </div>
                             <div class="theme-option" data-theme="ocean">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #0ea5e9, #06b6d4)"></div>
                                 <span>Ocean</span>
                             </div>
                             <div class="theme-option" data-theme="emerald">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #10b981, #34d399)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #10b981, #34d399)"></div>
                                 <span>Emerald</span>
                             </div>
                             <div class="theme-option" data-theme="rose">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #f43f5e, #fb7185)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #f43f5e, #fb7185)"></div>
                                 <span>Rose</span>
                             </div>
                             <div class="theme-option" data-theme="amber">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #f59e0b, #fbbf24)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #f59e0b, #fbbf24)"></div>
                                 <span>Amber</span>
                             </div>
                             <div class="theme-option" data-theme="sunset">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #f97316, #ef4444)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #f97316, #ef4444)"></div>
                                 <span>Sunset</span>
                             </div>
                             <div class="theme-option" data-theme="midnight">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #1e1b4b, #312e81)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #1e1b4b, #312e81)"></div>
                                 <span>Midnight</span>
                             </div>
                             <div class="theme-option" data-theme="forest">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #166534, #15803d)"></div>
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(135deg, #166534, #15803d)"></div>
                                 <span>Forest</span>
                             </div>
                         </div>
@@ -889,15 +945,15 @@
                     <!-- FAQ Section -->
                     <div class="support-faq">
                         <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-                        
+
                         <div class="faq-item" data-tilt>
                             <div class="faq-question">
                                 <span>How can I contact Julior for a project?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>You can reach out through the Contact page, email at juliorwaruwu7@gmail.com, 
-                                or connect via LinkedIn. typically responds within 24 hours on business days.</p>
+                                <p>You can reach out through the Contact page, email at juliorwaruwu7@gmail.com,
+                                    or connect via LinkedIn. typically responds within 24 hours on business days.</p>
                             </div>
                         </div>
 
@@ -907,9 +963,9 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Julior specializes in full-stack development including React, Node.js, Python, 
-                                Go, AWS, Docker, and Kubernetes. With expertise in both frontend and backend 
-                                technologies.</p>
+                                <p>Julior specializes in full-stack development including React, Node.js, Python,
+                                    Go, AWS, Docker, and Kubernetes. With expertise in both frontend and backend
+                                    technologies.</p>
                             </div>
                         </div>
 
@@ -919,8 +975,8 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! Julior is available for freelance projects, consulting, and full-time 
-                                opportunities. Feel free to reach out to discuss your project requirements.</p>
+                                <p>Yes! Julior is available for freelance projects, consulting, and full-time
+                                    opportunities. Feel free to reach out to discuss your project requirements.</p>
                             </div>
                         </div>
 
@@ -930,8 +986,9 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Project timelines vary based on scope and complexity. A typical web application 
-                                takes 4-8 weeks. Detailed timelines are provided during the initial consultation.</p>
+                                <p>Project timelines vary based on scope and complexity. A typical web application
+                                    takes 4-8 weeks. Detailed timelines are provided during the initial consultation.
+                                </p>
                             </div>
                         </div>
 
@@ -941,8 +998,8 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Absolutely! Code reviews and technical consultations are available. 
-                                Reach out via email or LinkedIn to schedule a session.</p>
+                                <p>Absolutely! Code reviews and technical consultations are available.
+                                    Reach out via email or LinkedIn to schedule a session.</p>
                             </div>
                         </div>
 
@@ -952,8 +1009,8 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Check out the GitHub profile for active open source projects. Contributions 
-                                are always welcome! Fork the repo, create a branch, and submit a pull request.</p>
+                                <p>Check out the GitHub profile for active open source projects. Contributions
+                                    are always welcome! Fork the repo, create a branch, and submit a pull request.</p>
                             </div>
                         </div>
                     </div>
@@ -990,12 +1047,18 @@
             <span>&copy; 2026 Built with precision.</span>
         </div>
         <div class="footer-right">
-            <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/juliorwaruwu" target="_blank" class="social-link github"><i class="fab fa-github"></i></a>
-            <a href="https://wa.me/6282271514570" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/" target="_blank" class="social-link twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://facebook.com/" target="_blank" class="social-link facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="social-link linkedin"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/juliorwaruwu" target="_blank" class="social-link github"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://wa.me/6282271514570" target="_blank" class="social-link whatsapp"><i
+                    class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/" target="_blank" class="social-link instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" target="_blank" class="social-link twitter"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/" target="_blank" class="social-link facebook"><i
+                    class="fab fa-facebook"></i></a>
             <a href="mailto:juliorwaruwu7@gmail.com" class="social-link email"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
@@ -1004,11 +1067,15 @@
     <nav class="mobile-nav">
         <a href="#home" class="mobile-nav-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="#skills" class="mobile-nav-link" data-page="skills"><i class="fas fa-code"></i><span>Skills</span></a>
-        <a href="#projects" class="mobile-nav-link" data-page="projects"><i class="fas fa-folder"></i><span>Projects</span></a>
-        <a href="#experience" class="mobile-nav-link" data-page="experience"><i class="fas fa-briefcase"></i><span>Exp</span></a>
-        <a href="#contact" class="mobile-nav-link" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <a href="#projects" class="mobile-nav-link" data-page="projects"><i
+                class="fas fa-folder"></i><span>Projects</span></a>
+        <a href="#experience" class="mobile-nav-link" data-page="experience"><i
+                class="fas fa-briefcase"></i><span>Exp</span></a>
+        <a href="#contact" class="mobile-nav-link" data-page="contact"><i
+                class="fas fa-envelope"></i><span>Contact</span></a>
     </nav>
 
-    <script src="script.js"></script>
+    <script type="module" src="src/js/main.js"></script>
 </body>
+
 </html>
