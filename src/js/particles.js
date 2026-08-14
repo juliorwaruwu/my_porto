@@ -3,8 +3,8 @@ import { qs, hexToRgb, ACCENT_CSS_VAR } from './utils.js';
 
 const canvas = qs('#particles');
 const ctx = canvas.getContext('2d');
-const PARTICLE_COUNT = 60;
-const LINK_DISTANCE = 120;
+const PARTICLE_COUNT = 45;
+const LINK_DISTANCE = 110;
 
 let particles = [];
 
@@ -72,6 +72,10 @@ function animate() {
 }
 
 export function initParticles() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        canvas.style.display = 'none';
+        return;
+    }
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());

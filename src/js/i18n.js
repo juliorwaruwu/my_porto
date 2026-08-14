@@ -268,7 +268,95 @@ export const translations = {
 };
 
 const typingGreetingEl = document.getElementById('typingGreeting');
-const rotatingTextEl = document.getElementById('rotatingText');
+
+// Text that is not part of the primary page headings is translated here as well.
+// Keeping this separate lets the markup retain its icons and card structure.
+const staticTranslations = {
+    id: {
+        'Home': 'Beranda', 'About': 'Tentang', 'Skills': 'Keahlian', 'Projects': 'Proyek',
+        'Experience': 'Pengalaman', 'Contact': 'Kontak', 'Settings': 'Pengaturan', 'Support': 'Dukungan',
+        'Download CV': 'Unduh CV', 'Software Engineer': 'Insinyur Perangkat Lunak',
+        'Available for work': 'Tersedia untuk bekerja', 'HOME PAGE': 'HALAMAN BERANDA',
+        'SKILLS PAGE': 'HALAMAN KEAHLIAN', 'TIMELINE PAGE': 'HALAMAN PERJALANAN',
+        'ABOUT PAGE': 'HALAMAN TENTANG', 'CONTACT PAGE FILE': 'HALAMAN KONTAK',
+        'SETTINGS PAGE FILE': 'HALAMAN PENGATURAN', 'SUPPORT PAGE FILE': 'HALAMAN DUKUNGAN',
+        'Music': 'Musik', 'Sports': 'Olahraga', 'Frontend': 'Frontend', 'Tools & Database': 'Alat & Basis Data',
+        'System Architecture': 'Arsitektur Sistem',
+        'Designing scalable, maintainable, and efficient system architectures that handle high traffic and complex data flows.': 'Merancang arsitektur sistem yang skalabel, mudah dipelihara, dan efisien untuk menangani trafik tinggi serta aliran data yang kompleks.',
+        'PORTFOLIO': 'PORTOFOLIO', 'Featured': 'Unggulan', 'AI Integration': 'Integrasi AI',
+        'Explore Project': 'Lihat Proyek',
+        'AI-powered MBTI personality assessment platform providing insights on career compatibility, strengths, relationships, and personal growth.': 'Platform asesmen kepribadian MBTI berbasis AI yang memberikan wawasan tentang kecocokan karier, kekuatan, hubungan, dan pengembangan diri.',
+        'Financial analytics platform analyzing spending patterns, predicting trends, and supporting smarter decisions through ML.': 'Platform analitik keuangan untuk menganalisis pola pengeluaran, memprediksi tren, dan mendukung keputusan yang lebih cerdas melalui ML.',
+        'Personal finance management platform for tracking income, expenses, budgets, and visualizing financial performance through dashboards.': 'Platform pengelolaan keuangan pribadi untuk melacak pemasukan, pengeluaran, anggaran, serta memvisualisasikan performa keuangan melalui dasbor.',
+        'Mobile expense tracking app for recording transactions, categorizing spending, and gaining financial behavior insights.': 'Aplikasi seluler pencatat pengeluaran untuk merekam transaksi, mengategorikan belanja, dan memperoleh wawasan perilaku keuangan.',
+        'Sports marketplace connecting buyers and sellers of equipment, apparel, and accessories with seamless browsing.': 'Marketplace olahraga yang menghubungkan pembeli dan penjual perlengkapan, pakaian, dan aksesori dengan pengalaman penelusuran yang lancar.',
+        'Study productivity app with scheduling, task management, reminders, and Pomodoro Timer to improve focus.': 'Aplikasi produktivitas belajar dengan penjadwalan, manajemen tugas, pengingat, dan Timer Pomodoro untuk meningkatkan fokus.',
+        'Student Registration System': 'Sistem Pendaftaran Mahasiswa',
+        'Web-based system digitalizing university admissions with streamlined workflows and an integrated admin dashboard.': 'Sistem berbasis web yang mendigitalisasi penerimaan universitas dengan alur kerja ringkas dan dasbor admin terintegrasi.',
+        '2026 - Present': '2026 - Sekarang', '2026 - June 2026': '2026 - Juni 2026', '2025 - Present': '2025 - Sekarang', '2024 - Present': '2024 - Sekarang',
+        'Data Analytics': 'Analitik Data', 'Reporting Tools': 'Alat Pelaporan', 'Leadership': 'Kepemimpinan',
+        'Communication': 'Komunikasi', 'Organization': 'Organisasi', 'Team Management': 'Manajemen Tim', 'Strategic Planning': 'Perencanaan Strategis',
+        'Full-Stack Development': 'Pengembangan Full-Stack',
+        'Building scalable web and mobile applications using modern frameworks like React, Flutter, Spring Boot, and Laravel.': 'Membangun aplikasi web dan seluler yang skalabel menggunakan framework modern seperti React, Flutter, Spring Boot, dan Laravel.',
+        'LIFETIME PROJECTS': 'TOTAL PROYEK', 'Projects Completed': 'Proyek Selesai', 'Technologies': 'Teknologi', 'Domains': 'Bidang', 'Passionate Developer': 'Pengembang Bersemangat',
+        'Mission': 'Misi', 'Vision': 'Visi', 'Passion': 'Passion', 'Beyond Code': 'Di Luar Kode',
+        'Sport': 'Olahraga', 'Photography': 'Fotografi', 'Reading': 'Membaca', 'Styling': 'Gaya', 'Cooking': 'Memasak',
+        'Phone': 'Telepon', 'Location': 'Lokasi', 'Mon - Fri, 9am - 6pm WIB': 'Senin - Jumat, 09.00 - 18.00 WIB',
+        'Reply within 24 hours': 'Balasan dalam 24 jam', 'Available for remote work': 'Tersedia untuk kerja jarak jauh',
+        'Open source contributor': 'Kontributor open source', 'Let\'s connect professionally': 'Mari terhubung secara profesional',
+        'Behind the scenes': 'Di balik layar', 'Coming Soon': 'Segera hadir', 'Tech thoughts & updates': 'Pemikiran dan pembaruan teknologi',
+        'Connect with me': 'Terhubung dengan saya', 'Send me a message': 'Kirim pesan kepada saya',
+        'Have a project in mind? Let\'s talk about it.': 'Punya proyek? Mari membahasnya.',
+        'Appearance': 'Tampilan', 'General': 'Umum', 'Language': 'Bahasa', 'Theme': 'Tema',
+        'Choose your preferred color theme': 'Pilih tema warna pilihan Anda', 'Adjust the look and feel': 'Sesuaikan tampilan dan nuansa',
+        'Light Mode': 'Mode Terang', 'Clean and bright': 'Bersih dan cerah', 'Dark Mode': 'Mode Gelap', 'Easy on the eyes': 'Nyaman di mata',
+        'Auto': 'Otomatis', 'Match system': 'Ikuti sistem', 'Font Size': 'Ukuran Font', 'Adjust text size for readability': 'Sesuaikan ukuran teks agar mudah dibaca',
+        'Small': 'Kecil', 'Medium': 'Sedang', 'Large': 'Besar', 'Sidebar Position': 'Posisi Sidebar', 'Choose sidebar placement': 'Pilih letak sidebar',
+        'Left': 'Kiri', 'Right': 'Kanan', 'Animations': 'Animasi', 'Enable or disable animations': 'Aktifkan atau nonaktifkan animasi',
+        '3D Card Effects': 'Efek Kartu 3D', 'Particle Background': 'Latar Partikel', 'Page Transitions': 'Transisi Halaman', '3D Background': 'Latar 3D',
+        'Select your preferred language': 'Pilih bahasa pilihan Anda', 'Japanese': 'Jepang', 'Korean': 'Korea', 'Spanish': 'Spanyol', 'German': 'Jerman',
+        'United States': 'Amerika Serikat', 'Japan': 'Jepang', 'South Korea': 'Korea Selatan',
+        'Documentation': 'Dokumentasi', 'Browse our comprehensive guides and tutorials': 'Jelajahi panduan dan tutorial lengkap kami', 'Read Docs': 'Baca Dokumentasi',
+        'Video Tutorials': 'Tutorial Video', 'Watch step-by-step video guides': 'Tonton panduan video langkah demi langkah', 'Watch Now': 'Tonton Sekarang',
+        'Live Chat': 'Obrolan Langsung', 'Chat with our support team in real-time': 'Mengobrol dengan tim dukungan kami secara real-time', 'Start Chat': 'Mulai Obrolan',
+        'Frequently Asked Questions': 'Pertanyaan yang Sering Diajukan',
+        'How can I contact Julior for a project?': 'Bagaimana cara menghubungi Julior untuk proyek?',
+        'You can reach out through the Contact page, email at juliorwaruwu7@gmail.com, or connect via LinkedIn. typically responds within 24 hours on business days.': 'Anda dapat menghubungi melalui halaman Kontak, email juliorwaruwu7@gmail.com, atau LinkedIn. Biasanya mendapat balasan dalam 24 jam pada hari kerja.',
+        'What technologies does Julior specialize in?': 'Teknologi apa yang menjadi keahlian Julior?',
+        'Julior specializes in full-stack development including React, Node.js, Python, Go, AWS, Docker, and Kubernetes. With expertise in both frontend and backend technologies.': 'Julior berfokus pada pengembangan full-stack, termasuk React, Node.js, Python, Go, AWS, Docker, dan Kubernetes, dengan keahlian pada teknologi frontend dan backend.',
+        'Does Julior take freelance projects?': 'Apakah Julior menerima proyek freelance?',
+        'Yes! Julior is available for freelance projects, consulting, and full-time opportunities. Feel free to reach out to discuss your project requirements.': 'Ya! Julior tersedia untuk proyek freelance, konsultasi, dan peluang kerja penuh waktu. Silakan hubungi untuk membahas kebutuhan proyek Anda.',
+        'What is the typical project turnaround time?': 'Berapa lama waktu pengerjaan proyek biasanya?',
+        'Project timelines vary based on scope and complexity. A typical web application takes 4-8 weeks. Detailed timelines are provided during the initial consultation.': 'Waktu pengerjaan proyek bergantung pada cakupan dan kompleksitas. Aplikasi web biasanya memerlukan 4-8 minggu. Jadwal terperinci diberikan saat konsultasi awal.',
+        'Can I request a code review or consultation?': 'Dapatkah saya meminta code review atau konsultasi?',
+        'Absolutely! Code reviews and technical consultations are available. Reach out via email or LinkedIn to schedule a session.': 'Tentu! Code review dan konsultasi teknis tersedia. Hubungi melalui email atau LinkedIn untuk menjadwalkan sesi.',
+        'How can I collaborate on an open source project?': 'Bagaimana cara berkolaborasi pada proyek open source?',
+        'Check out the GitHub profile for active open source projects. Contributions are always welcome! Fork the repo, create a branch, and submit a pull request.': 'Lihat profil GitHub untuk proyek open source yang aktif. Kontribusi selalu diterima! Fork repositori, buat branch, lalu kirim pull request.',
+        'Still need help?': 'Masih butuh bantuan?', 'Our support team is available 24/7 to assist you with any questions or concerns.': 'Tim dukungan kami tersedia 24/7 untuk membantu pertanyaan atau kendala Anda.',
+        'Send Message': 'Kirim Pesan', 'Built with precision.': 'Dibuat dengan teliti.'
+    }
+};
+
+const originalStaticText = new WeakMap();
+
+function translateStaticText(lang) {
+    const dictionary = staticTranslations[lang];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            return node.parentElement?.closest('script, style') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+        const original = originalStaticText.get(node) ?? node.nodeValue;
+        originalStaticText.set(node, original);
+        const key = original.replace(/\s+/g, ' ').trim();
+        node.nodeValue = dictionary?.[key] ?? original;
+    });
+}
+
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let typingTimeout;
 let currentGreetingIndex = 0;
@@ -280,6 +368,10 @@ let rotatingInterval;
 
 function restartTyping(greetings) {
     clearTimeout(typingTimeout);
+    if (REDUCED_MOTION) {
+        if (typingGreetingEl) typingGreetingEl.textContent = greetings[0];
+        return;
+    }
     currentGreetingIndex = 0;
     currentCharIndex = 0;
     isDeleting = false;
@@ -308,10 +400,12 @@ function typeGreetingLoop(greetings) {
 }
 
 function startRotatingText(texts) {
+    const rotatingTextEl = document.getElementById('rotatingText');
     if (!rotatingTextEl || !texts || texts.length === 0) return;
     clearInterval(rotatingInterval);
     rotatingIndex = 0;
     rotatingTextEl.textContent = texts[0];
+    if (REDUCED_MOTION) return;
     rotatingInterval = setInterval(() => {
         rotatingTextEl.classList.add('fade-out');
         setTimeout(() => {
@@ -320,13 +414,15 @@ function startRotatingText(texts) {
             rotatingTextEl.classList.remove('fade-out');
             rotatingTextEl.classList.add('fade-in');
         }, 400);
-    }, 3000);
+    }, 4000);
 }
 
 export function applyLanguage(lang) {
     state.language = lang;
     const t = translations[lang];
     if (!t) return;
+    document.documentElement.lang = lang;
+    translateStaticText(lang);
 
     const greetingEl = document.getElementById('typingGreeting');
     if (greetingEl) greetingEl.dataset.greetings = JSON.stringify(t.greeting);
@@ -422,6 +518,6 @@ export function applyLanguage(lang) {
 }
 
 export function initI18n() {
-    typeGreetingLoop(translations.en.greeting);
+    restartTyping(translations.en.greeting);
     startRotatingText(translations.en.rotatingTexts);
 }

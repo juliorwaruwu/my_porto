@@ -35,6 +35,8 @@ function applyMode(mode) {
         root.style.setProperty('--card-bg-solid', '#1e1e2e');
         root.style.setProperty('--sidebar-bg', 'rgba(30,30,46,0.9)');
         root.style.setProperty('--border', 'rgba(255,255,255,0.08)');
+        root.style.setProperty('--bottom-bg', 'rgba(20,20,32,0.95)');
+        root.style.setProperty('--bottom-text', '#94a3b8');
         document.body.style.background = '#0f0f1a';
     } else if (mode === 'light') {
         root.style.setProperty('--bg-light', '#f0f2f5');
@@ -44,6 +46,8 @@ function applyMode(mode) {
         root.style.setProperty('--card-bg-solid', '#ffffff');
         root.style.setProperty('--sidebar-bg', 'rgba(255,255,255,0.9)');
         root.style.setProperty('--border', 'rgba(0,0,0,0.08)');
+        root.style.setProperty('--bottom-bg', 'rgba(255,255,255,0.9)');
+        root.style.setProperty('--bottom-text', '#6b7280');
         document.body.style.background = '#f0f2f5';
     } else {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -95,7 +99,26 @@ function applyTransitions(enabled) {
     document.documentElement.style.setProperty('--transition', value);
 }
 
+function applyBG3D(enabled) {
+    state.animations.bg3d = enabled;
+    const bg = document.getElementById('bg3d');
+    if (bg) bg.style.display = enabled ? '' : 'none';
+}
+
 export function initSettings() {
+    qsa('.settings-tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            qsa('.settings-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            qsa('.settings-tab-panel').forEach(panel => {
+                panel.classList.toggle('active', panel.id === 'settings-' + this.dataset.tab);
+            });
+        });
+    });
     qsa('.theme-option').forEach(option => {
         option.addEventListener('click', function () {
             qsa('.theme-option').forEach(o => o.classList.remove('active'));
@@ -144,6 +167,7 @@ export function initSettings() {
             }
             if (index === 1) applyParticles(this.checked);
             if (index === 2) applyTransitions(this.checked);
+            if (index === 3) applyBG3D(this.checked);
         });
     });
 

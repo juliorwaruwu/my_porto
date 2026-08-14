@@ -53,6 +53,7 @@
 .cta-btn {
     background: linear-gradient(135deg, var(--bg-dark), #1a1a2e);
     color: white;
+    text-decoration: none;
     border: none;
     padding: 12px 24px;
     border-radius: 12px;
@@ -151,7 +152,7 @@
     transition: var(--transition);
     border: 1px solid var(--border);
 }
-.timeline-card:hover { transform: translateX(8px); box-shadow: var(--shadow-3d); border-color: var(--accent-glow); }
+.timeline-card:hover { transform: translateX(3px); box-shadow: var(--shadow); border-color: var(--accent-glow); }
 .timeline-date { font-size: 0.78rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
 .timeline-date i { font-size: 0.7rem; }
 .timeline-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }

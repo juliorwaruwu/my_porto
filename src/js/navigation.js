@@ -4,10 +4,13 @@ import { qsa } from './utils.js';
 
 const STAGGER_SELECTOR = '.skill-card-3d, .project-card, .contact-card, .about-stat-card, .about-detail-card, .interest-item, .exp-card, .timeline-card, .skill-category-card, .skill-icon-item, .settings-section, .support-action-card, .faq-item, .support-contact-card';
 
+const visitedPages = new Set();
+
 export function initNavigation() {
     const navLinks = qsa('.nav-link');
     const sidebarLinks = qsa('.sidebar-link');
     const mobileNavLinks = qsa('.mobile-nav-link');
+    const pageLinks = qsa('.page-link');
     const pages = qsa('.page');
 
     function switchPage(pageName) {
@@ -21,14 +24,17 @@ export function initNavigation() {
                 page.style.animation = 'none';
                 page.offsetHeight;
                 if (state.animations.transitions) {
-                    page.style.animation = 'pageIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+                    page.style.animation = 'pageIn 0.4s cubic-bezier(0.25, 0.8, 0.35, 1) forwards';
                 } else {
                     page.style.animation = 'none';
                     page.style.opacity = '1';
                 }
                 document.querySelector('.content').scrollTop = 0;
                 animateCounters(page);
-                staggerCards(page, STAGGER_SELECTOR);
+                if (!visitedPages.has(pageName)) {
+                    visitedPages.add(pageName);
+                    staggerCards(page, STAGGER_SELECTOR);
+                }
             }
         });
     }
@@ -46,6 +52,13 @@ export function initNavigation() {
             e.preventDefault();
             switchPage(link.dataset.page);
             closeMobileMenu();
+        });
+    });
+
+    pageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchPage(link.dataset.page);
         });
     });
 

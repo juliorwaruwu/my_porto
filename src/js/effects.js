@@ -3,35 +3,39 @@ import { qsa } from './utils.js';
 
 const EFFECT_CLASSES = ['effect-flip', 'effect-lift', 'effect-glow', 'effect-tilt', 'effect-rotate'];
 
+const TILT_SELECTOR = '.skill-card-3d, .contact-card, .about-stat-card';
+
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const HAS_MOUSE = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
 export function initTilt() {
-    qsa('[data-tilt]').forEach(card => {
+    if (REDUCED_MOTION || !HAS_MOUSE) return;
+    qsa(TILT_SELECTOR).forEach(card => {
+        card.onmouseenter = () => { card.style.transition = 'transform 0.2s ease-out'; };
         card.onmousemove = (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 12;
-            const rotateY = (centerX - x) / 12;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px) scale(1.02)`;
+            const rotateX = ((e.clientY - rect.top) - rect.height / 2) / 85;
+            const rotateY = ((rect.width / 2) - (e.clientX - rect.left)) / 85;
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         };
         card.onmouseleave = () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
+            card.style.transition = 'transform 0.35s ease';
+            card.style.transform = '';
+            setTimeout(() => { card.style.transition = ''; }, 350);
         };
     });
 }
 
 export function setTiltEnabled(enabled) {
     state.animations.tilt3d = enabled;
-    if (!enabled) {
-        qsa('[data-tilt]').forEach(el => {
-            el.onmousemove = null;
-            el.onmouseleave = null;
-            el.style.transform = '';
-        });
-    } else {
-        initTilt();
-    }
+    qsa(TILT_SELECTOR).forEach(el => {
+        el.onmouseenter = null;
+        el.onmousemove = null;
+        el.onmouseleave = null;
+        el.style.transform = '';
+        el.style.transition = '';
+    });
+    if (enabled) initTilt();
 }
 
 export function applyEffects() {
@@ -59,14 +63,20 @@ export function animateCounters(container) {
 }
 
 export function staggerCards(container, selector) {
-    if (!state.animations.transitions) return;
-    container.querySelectorAll(selector).forEach((card, i) => {
+    if (!state.animations.transitions || REDUCED_MOTION) return;
+    const cards = container.querySelectorAll(selector);
+    cards.forEach((card, i) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+        card.style.transform = 'translateY(14px)';
         setTimeout(() => {
-            card.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.35, 1)';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-        }, i * 80);
+            setTimeout(() => {
+                card.style.transition = '';
+                card.style.opacity = '';
+                card.style.transform = '';
+            }, 450);
+        }, Math.min(i * 60, 480));
     });
 }

@@ -7,6 +7,7 @@ export const state = {
     animations: {
         tilt3d: true,
         particles: true,
-        transitions: true
+        transitions: true,
+        bg3d: true
     }
 };
