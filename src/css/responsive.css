@@ -26,9 +26,13 @@
     }
     .sidebar.active { transform: translateX(0); }
 
-    .content { margin-left: 0; padding: 25px 18px; }
+    .content { margin-left: 0; padding: 25px 18px 85px; }
     .footer { display: none; }
     .mobile-nav { display: flex; }
+
+    /* Comfortable touch targets in the drawer */
+    .sidebar-link { min-height: 44px; }
+    .sidebar-profile { padding-bottom: 22px; margin-bottom: 22px; }
 
     .featured-skills { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
@@ -64,4 +68,43 @@
     .theme-grid { grid-template-columns: repeat(2, 1fr); }
     .appearance-options { grid-template-columns: 1fr; }
     .sidebar-position-options { grid-template-columns: 1fr; }
+}
+
+/* Mobile & touch devices: adapt profile photo animation */
+@media (max-width: 900px), (hover: none) {
+    .profile-photo {
+        width: 92px;
+        height: 92px;
+        animation-duration: 8s;
+    }
+    .profile-photo::before {
+        animation-duration: 5s;
+    }
+    .profile-photo::after {
+        animation-duration: 6s;
+    }
+    /* No hover on touch: sweep the shine automatically */
+    .profile-photo .photo-shine {
+        animation: photoShineLoop 5s ease-in-out infinite;
+    }
+    .about-avatar img {
+        transition: none;
+    }
+}
+
+@keyframes photoShineLoop {
+    0% { left: -75%; }
+    35% { left: 125%; }
+    100% { left: 125%; }
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .profile-photo,
+    .profile-photo::before,
+    .profile-photo::after,
+    .profile-photo .photo-shine,
+    .about-avatar::before {
+        animation: none;
+    }
 }

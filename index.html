@@ -1,1155 +1,1521 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Julior.dev - Software Engineer portfolio. Full-Stack Developer & Data Analytics Enthusiast.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Julior.dev - Software Engineer portfolio. Full-Stack Developer & Data Analytics Enthusiast."
+    />
     <title>Julior.dev - Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="src/css/variables.css">
-    <link rel="stylesheet" href="src/css/base.css">
-    <link rel="stylesheet" href="src/css/layout.css">
-    <link rel="stylesheet" href="src/css/components.css">
-    <link rel="stylesheet" href="src/css/pages.css">
-    <link rel="stylesheet" href="src/css/effects.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="src/css/variables.css" />
+    <link rel="stylesheet" href="src/css/base.css" />
+    <link rel="stylesheet" href="src/css/layout.css" />
+    <link rel="stylesheet" href="src/css/components.css" />
+    <link rel="stylesheet" href="src/css/pages.css" />
+    <link rel="stylesheet" href="src/css/effects.css" />
+    <link rel="stylesheet" href="src/css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <canvas id="particles"></canvas>
     <div class="bg-3d" id="bg3d" aria-hidden="true">
-        <div class="bg-shape rays-3d"></div>
-        <div class="bg-shape sphere-3d"></div>
-        <div class="bg-shape ring-3d"></div>
-        <div class="bg-shape ring-3d ring-3d--small"></div>
-        <div class="bg-shape cog-3d"><i class="fas fa-cog"></i></div>
-        <div class="bg-shape cube-3d">
-            <div class="cube-face cube-front"></div>
-            <div class="cube-face cube-back"></div>
-            <div class="cube-face cube-left"></div>
-            <div class="cube-face cube-right"></div>
-            <div class="cube-face cube-top"></div>
-            <div class="cube-face cube-bottom"></div>
-        </div>
-        <div class="star-field">
-            <span class="star-dot" style="top:18%;left:22%;animation-delay:0s;"></span>
-            <span class="star-dot" style="top:32%;left:64%;animation-delay:0.7s;"></span>
-            <span class="star-dot" style="top:55%;left:38%;animation-delay:1.4s;"></span>
-            <span class="star-dot" style="top:70%;left:78%;animation-delay:0.4s;"></span>
-            <span class="star-dot" style="top:24%;left:88%;animation-delay:2.1s;"></span>
-            <span class="star-dot" style="top:62%;left:10%;animation-delay:1.8s;"></span>
-            <span class="star-dot" style="top:84%;left:52%;animation-delay:2.6s;"></span>
-            <span class="star-dot" style="top:40%;left:44%;animation-delay:3.2s;"></span>
-        </div>
+      <div class="bg-shape rays-3d"></div>
+      <div class="bg-shape sphere-3d"></div>
+      <div class="bg-shape ring-3d"></div>
+      <div class="bg-shape ring-3d ring-3d--small"></div>
+      <div class="bg-shape cog-3d"><i class="fas fa-cog"></i></div>
+      <div class="bg-shape cube-3d">
+        <div class="cube-face cube-front"></div>
+        <div class="cube-face cube-back"></div>
+        <div class="cube-face cube-left"></div>
+        <div class="cube-face cube-right"></div>
+        <div class="cube-face cube-top"></div>
+        <div class="cube-face cube-bottom"></div>
+      </div>
+      <div class="star-field">
+        <span
+          class="star-dot"
+          style="top: 18%; left: 22%; animation-delay: 0s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 32%; left: 64%; animation-delay: 0.7s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 55%; left: 38%; animation-delay: 1.4s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 70%; left: 78%; animation-delay: 0.4s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 24%; left: 88%; animation-delay: 2.1s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 62%; left: 10%; animation-delay: 1.8s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 84%; left: 52%; animation-delay: 2.6s"
+        ></span>
+        <span
+          class="star-dot"
+          style="top: 40%; left: 44%; animation-delay: 3.2s"
+        ></span>
+      </div>
     </div>
     <div class="vintage-grain" aria-hidden="true"></div>
     <div class="vintage-vignette" aria-hidden="true"></div>
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <nav class="top-nav">
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-logo">
-            <span class="logo-dot"></span>
-            Julior
-        </div>
-        <div class="nav-links">
-            <a href="#home" class="nav-link active" data-page="home">
-                <i class="fas fa-home"></i> Home
-            </a>
-            <a href="#about" class="nav-link" data-page="about">
-                <i class="fas fa-user"></i> About
-            </a>
-            <a href="#skills" class="nav-link" data-page="skills">
-                <i class="fas fa-code"></i> Skills
-            </a>
-            <a href="#projects" class="nav-link" data-page="projects">
-                <i class="fas fa-folder"></i> Projects
-            </a>
-            <a href="#experience" class="nav-link" data-page="experience">
-                <i class="fas fa-briefcase"></i> Experience
-            </a>
-            <a href="#contact" class="nav-link" data-page="contact">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-        <a href="assets/cv/Julior_CV.pdf" download class="download-cv-btn">
-            <i class="fas fa-download"></i> Download CV
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-logo">
+        <span class="logo-dot"></span>
+        Julior
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="nav-link active" data-page="home">
+          <i class="fas fa-home"></i> Home
         </a>
+        <a href="#about" class="nav-link" data-page="about">
+          <i class="fas fa-user"></i> About
+        </a>
+        <a href="#skills" class="nav-link" data-page="skills">
+          <i class="fas fa-code"></i> Skills
+        </a>
+        <a href="#projects" class="nav-link" data-page="projects">
+          <i class="fas fa-folder"></i> Projects
+        </a>
+        <a href="#experience" class="nav-link" data-page="experience">
+          <i class="fas fa-briefcase"></i> Experience
+        </a>
+        <a href="#contact" class="nav-link" data-page="contact">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </div>
+      <a href="assets/cv/Julior_CV.pdf" download class="download-cv-btn">
+        <i class="fas fa-download"></i> Download CV
+      </a>
     </nav>
 
     <div class="main-container">
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-profile">
-                <div class="profile-photo">
-                    <!-- <i class="fas fa-user"></i> -->
-                    <img src="assets/images/profile/profile.png" alt="Julior Dev">
-                </div>
-                <h3 class="profile-name">Julior</h3>
-                <p class="profile-title">Software Engineer</p>
-                <div class="profile-status">
-                    <span class="status-dot"></span> Available for work
-                </div>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-photo">
+            <!-- <i class="fas fa-user"></i> -->
+            <img src="assets/images/profile/profile.png" alt="Julior Dev" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3 class="profile-name">Julior</h3>
+          <p class="profile-title">Software Engineer</p>
+          <div class="profile-status">
+            <span class="status-dot"></span> Available for work
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#home" class="sidebar-link active" data-page="home">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a href="#about" class="sidebar-link" data-page="about">
+            <i class="fas fa-user"></i> About
+          </a>
+          <a href="#skills" class="sidebar-link" data-page="skills">
+            <i class="fas fa-code"></i> Skills
+          </a>
+          <a href="#projects" class="sidebar-link" data-page="projects">
+            <i class="fas fa-folder"></i> Projects
+          </a>
+          <a href="#experience" class="sidebar-link" data-page="experience">
+            <i class="fas fa-briefcase"></i> Experience
+          </a>
+          <a href="#contact" class="sidebar-link" data-page="contact">
+            <i class="fas fa-envelope"></i> Contact
+          </a>
+          <div class="sidebar-divider"></div>
+          <a href="#settings" class="sidebar-link" data-page="settings">
+            <i class="fas fa-cog"></i> Settings
+          </a>
+          <a href="#support" class="sidebar-link" data-page="support">
+            <i class="fas fa-question-circle"></i> Support
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            HOME PAGE
+          </div>
+          <div class="hero-section">
+            <div class="hero-greeting" id="typingGreeting"></div>
+            <h1 class="hero-title">
+              Hello I am <span class="highlight">Julior</span><br />
+              <span class="hero-subtitle"
+                >I'm a
+                <span class="rotating-text" id="rotatingText"
+                  >Full-Stack Developer</span
+                ></span
+              >
+            </h1>
+            <div class="hero-icons">
+              <span class="hero-icon">
+                <div class="hero-icon-box"><i class="fas fa-guitar"></i></div>
+                <small>Music</small>
+              </span>
+              <span class="hero-icon">
+                <div class="hero-icon-box"><i class="fas fa-futbol"></i></div>
+                <small>Sports</small>
+              </span>
             </div>
-            <nav class="sidebar-nav">
-                <a href="#home" class="sidebar-link active" data-page="home">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="#about" class="sidebar-link" data-page="about">
-                    <i class="fas fa-user"></i> About
-                </a>
-                <a href="#skills" class="sidebar-link" data-page="skills">
-                    <i class="fas fa-code"></i> Skills
-                </a>
-                <a href="#projects" class="sidebar-link" data-page="projects">
-                    <i class="fas fa-folder"></i> Projects
-                </a>
-                <a href="#experience" class="sidebar-link" data-page="experience">
-                    <i class="fas fa-briefcase"></i> Experience
-                </a>
-                <a href="#contact" class="sidebar-link" data-page="contact">
-                    <i class="fas fa-envelope"></i> Contact
-                </a>
-                <div class="sidebar-divider"></div>
-                <a href="#settings" class="sidebar-link" data-page="settings">
-                    <i class="fas fa-cog"></i> Settings
-                </a>
-                <a href="#support" class="sidebar-link" data-page="support">
-                    <i class="fas fa-question-circle"></i> Support
-                </a>
-            </nav>
-        </aside>
+            <a
+              href="#projects"
+              class="cta-btn magnetic page-link"
+              data-page="projects"
+            >
+              <i class="fas fa-rocket"></i> Explore Projects
+            </a>
+            <p class="hero-description">
+              Full-Stack Developer & Data Analytics Enthusiast crafting modern,
+              scalable web and mobile applications that solve real-world
+              problems.
+            </p>
+          </div>
+          <div class="featured-skills">
+            <div class="skill-card-3d" data-tilt>
+              <div class="skill-card-glow"></div>
+              <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+              <h3>Mobile</h3>
+              <p>Flutter & Cross-Platform</p>
+              <div class="card-shine"></div>
+            </div>
+            <div class="skill-card-3d" data-tilt>
+              <div class="skill-card-glow"></div>
+              <div class="skill-icon"><i class="fas fa-code"></i></div>
+              <h3>Backend</h3>
+              <p>Java & Spring Boot</p>
+              <div class="card-shine"></div>
+            </div>
+            <div class="skill-card-3d" data-tilt>
+              <div class="skill-card-glow"></div>
+              <div class="skill-icon"><i class="fas fa-database"></i></div>
+              <h3>Database</h3>
+              <p>MySQL & PostgreSQL</p>
+              <div class="card-shine"></div>
+            </div>
+          </div>
+        </section>
 
-        <main class="content">
-            <!-- Home Page -->
-            <section id="home" class="page active">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    HOME PAGE
-                </div>
-                <div class="hero-section">
-                    <div class="hero-greeting" id="typingGreeting"></div>
-                    <h1 class="hero-title">
-                        Hello I am <span class="highlight">Julior</span><br>
-                        <span class="hero-subtitle">I'm a <span class="rotating-text" id="rotatingText">Full-Stack
-                                Developer</span></span>
-                    </h1>
-                    <div class="hero-icons">
-                        <span class="hero-icon">
-                            <div class="hero-icon-box"><i class="fas fa-guitar"></i></div>
-                            <small>Music</small>
-                        </span>
-                        <span class="hero-icon">
-                            <div class="hero-icon-box"><i class="fas fa-futbol"></i></div>
-                            <small>Sports</small>
-                        </span>
-                    </div>
-                    <a href="#projects" class="cta-btn magnetic page-link" data-page="projects">
-                        
-                        <i class="fas fa-rocket"></i> Explore Projects
-                    </a>
-                    <p class="hero-description">
-                        Full-Stack Developer & Data Analytics Enthusiast crafting modern, scalable web and mobile
-                        applications that solve real-world problems.
-                    </p>
-                </div>
-                <div class="featured-skills">
-                    <div class="skill-card-3d" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Mobile</h3>
-                        <p>Flutter & Cross-Platform</p>
-                        <div class="card-shine"></div>
-                    </div>
-                    <div class="skill-card-3d" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <h3>Backend</h3>
-                        <p>Java & Spring Boot</p>
-                        <div class="card-shine"></div>
-                    </div>
-                    <div class="skill-card-3d" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <h3>Database</h3>
-                        <p>MySQL & PostgreSQL</p>
-                        <div class="card-shine"></div>
-                    </div>
-                </div>
-            </section>
+        <!-- Skills Page -->
+        <section id="skills" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            SKILLS PAGE
+          </div>
+          <h1 class="page-title">Technical Inventory</h1>
+          <p class="page-description">
+            A comprehensive overview of my technical skills, tools, and
+            technologies I've mastered throughout my career as a software
+            engineer.
+          </p>
 
-            <!-- Skills Page -->
-            <section id="skills" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    SKILLS PAGE
+          <div class="skills-grid">
+            <div class="skill-category-card" data-tilt>
+              <div class="skill-card-glow"></div>
+              <h3><i class="fas fa-code"></i> Frontend</h3>
+              <div class="tech-icons">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Thymeleaf</span>
+              </div>
+              <div class="preview-image">
+                <i class="fas fa-desktop"></i>
+              </div>
+            </div>
+
+            <div class="skill-category-card" data-tilt>
+              <div class="skill-card-glow"></div>
+              <h3><i class="fas fa-server"></i> Backend</h3>
+              <div class="tech-icons">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">PostgreSQL</span>
+              </div>
+              <div class="preview-image">
+                <i class="fas fa-cogs"></i>
+              </div>
+            </div>
+
+            <div class="skill-category-card" data-tilt>
+              <div class="skill-card-glow"></div>
+              <h3><i class="fas fa-cloud"></i> Tools & Database</h3>
+              <div class="tech-icons">
+                <span class="tech-badge">Firebase</span>
+                <span class="tech-badge">Git</span>
+                <span class="tech-badge">GitHub</span>
+                <span class="tech-badge">Figma</span>
+                <span class="tech-badge">IntelliJ IDEA</span>
+                <span class="tech-badge">VS Code</span>
+                <span class="tech-badge">Telemetry</span>
+              </div>
+              <div class="preview-image">
+                <i class="fas fa-tools"></i>
+              </div>
+            </div>
+
+            <div class="system-arch-card" data-tilt>
+              <div class="skill-card-glow"></div>
+              <h3>
+                <i class="fas fa-project-diagram"></i> System Architecture
+              </h3>
+              <p>
+                Designing scalable, maintainable, and efficient system
+                architectures that handle high traffic and complex data flows.
+              </p>
+              <div class="arch-chart">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-marquee">
+            <div class="marquee-track">
+              <div class="skills-footer-icons">
+                <div class="skill-icon-item">
+                  <i class="fab fa-java"></i><span>Java</span>
                 </div>
-                <h1 class="page-title">Technical Inventory</h1>
-                <p class="page-description">
-                    A comprehensive overview of my technical skills, tools, and technologies
-                    I've mastered throughout my career as a software engineer.
+                <div class="skill-icon-item">
+                  <i class="fab fa-python"></i><span>Python</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-react"></i><span>React</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-laravel"></i><span>Laravel</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-html5"></i><span>HTML5</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-css3-alt"></i><span>CSS3</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-js-square"></i><span>JavaScript</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-git-alt"></i><span>Git</span>
+                </div>
+              </div>
+              <div class="skills-footer-icons" aria-hidden="true">
+                <div class="skill-icon-item">
+                  <i class="fab fa-java"></i><span>Java</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-python"></i><span>Python</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-react"></i><span>React</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-laravel"></i><span>Laravel</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-html5"></i><span>HTML5</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-css3-alt"></i><span>CSS3</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-js-square"></i><span>JavaScript</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-git-alt"></i><span>Git</span>
+                </div>
+              </div>
+              <div class="skills-footer-icons" aria-hidden="true">
+                <div class="skill-icon-item">
+                  <i class="fab fa-java"></i><span>Java</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-python"></i><span>Python</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-react"></i><span>React</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-laravel"></i><span>Laravel</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-html5"></i><span>HTML5</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-css3-alt"></i><span>CSS3</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-js-square"></i><span>JavaScript</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-git-alt"></i><span>Git</span>
+                </div>
+              </div>
+              <div class="skills-footer-icons" aria-hidden="true">
+                <div class="skill-icon-item">
+                  <i class="fab fa-java"></i><span>Java</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-python"></i><span>Python</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-react"></i><span>React</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-laravel"></i><span>Laravel</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-html5"></i><span>HTML5</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-css3-alt"></i><span>CSS3</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-js-square"></i><span>JavaScript</span>
+                </div>
+                <div class="skill-icon-item">
+                  <i class="fab fa-git-alt"></i><span>Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section id="projects" class="page">
+          <p class="section-label">PORTFOLIO</p>
+          <h1 class="page-title">Featured Projects</h1>
+          <p class="page-description">
+            A showcase of my recent work and personal projects that demonstrate
+            my skills in full-stack development, mobile development, data
+            analytics, and software engineering.
+          </p>
+
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/images/projects/personaai.png"
+                  alt="PersonaAI"
+                />
+              </div>
+              <div class="project-info">
+                <div class="project-badge">Featured</div>
+                <h3>PersonaAI</h3>
+                <p>
+                  AI-powered MBTI personality assessment platform providing
+                  insights on career compatibility, strengths, relationships,
+                  and personal growth.
                 </p>
-
-                <div class="skills-grid">
-                    <div class="skill-category-card" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <h3><i class="fas fa-code"></i> Frontend</h3>
-                        <div class="tech-icons">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Flutter</span>
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Tailwind CSS</span>
-                            <span class="tech-badge">Thymeleaf</span>
-                        </div>
-                        <div class="preview-image">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <h3><i class="fas fa-server"></i> Backend</h3>
-                        <div class="tech-icons">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">Spring Boot</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Laravel</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                        </div>
-                        <div class="preview-image">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <h3><i class="fas fa-cloud"></i> Tools & Database</h3>
-                        <div class="tech-icons">
-                            <span class="tech-badge">Firebase</span>
-                            <span class="tech-badge">Git</span>
-                            <span class="tech-badge">GitHub</span>
-                            <span class="tech-badge">Figma</span>
-                            <span class="tech-badge">IntelliJ IDEA</span>
-                            <span class="tech-badge">VS Code</span>
-                            <span class="tech-badge">Telemetry</span>
-                        </div>
-                        <div class="preview-image">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                    </div>
-
-                    <div class="system-arch-card" data-tilt>
-                        <div class="skill-card-glow"></div>
-                        <h3><i class="fas fa-project-diagram"></i> System Architecture</h3>
-                        <p>Designing scalable, maintainable, and efficient system architectures that handle high traffic
-                            and complex data flows.</p>
-                        <div class="arch-chart">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                    </div>
+                <div class="tech-stack">
+                  <span>React</span><span>Tailwind CSS</span
+                  ><span>AI Integration</span>
                 </div>
-
-                <div class="skills-marquee">
-                    <div class="marquee-track">
-                        <div class="skills-footer-icons">
-                            <div class="skill-icon-item"><i class="fab fa-java"></i><span>Java</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-python"></i><span>Python</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-react"></i><span>React</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                        </div>
-                        <div class="skills-footer-icons" aria-hidden="true">
-                            <div class="skill-icon-item"><i class="fab fa-java"></i><span>Java</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-python"></i><span>Python</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-react"></i><span>React</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-                            <div class="skill-icon-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Page -->
-            <section id="projects" class="page">
-                <p class="section-label">PORTFOLIO</p>
-                <h1 class="page-title">Featured Projects</h1>
-                <p class="page-description">
-                    A showcase of my recent work and personal projects that demonstrate my skills in full-stack
-                    development, mobile development, data analytics, and software engineering.
+                <a href="https://personaaijv.vercel.app" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/projects/jflow.png" alt="JFlow" />
+              </div>
+              <div class="project-info">
+                <div class="project-badge">Featured</div>
+                <h3>JFlow</h3>
+                <p>
+                  Financial analytics platform analyzing spending patterns,
+                  predicting trends, and supporting smarter decisions through
+                  ML.
                 </p>
-
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/personaai.png" alt="PersonaAI">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Featured</div>
-                            <h3>PersonaAI</h3>
-                            <p>AI-powered MBTI personality assessment platform providing insights on career
-                                compatibility, strengths, relationships, and personal growth.</p>
-                            <div class="tech-stack">
-                                <span>React</span><span>Tailwind CSS</span><span>AI Integration</span>
-                            </div>
-                            <a href="https://personaaijv.vercel.app" class="project-cta">Explore Project <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/jflow.png" alt="JFlow">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Featured</div>
-                            <h3>JFlow</h3>
-                            <p>Financial analytics platform analyzing spending patterns, predicting trends, and
-                                supporting smarter decisions through ML.</p>
-                            <div class="tech-stack">
-                                <span>React</span><span>Tailwind
-                                    CSS</span><span>FastAPI</span><span>MySQL</span><span>Supabase</span>
-                            </div>
-                            <a href="https://jflow07.vercel.app/" class="project-cta">Explore Project <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/flowva.png" alt="Flowva">
-                        </div>
-                        <div class="project-info">
-                            <h3>Flowva</h3>
-                            <p>Personal finance management platform for tracking income, expenses, budgets, and
-                                visualizing financial performance through dashboards.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span><span>Laravel</span><span>PostgreSQL</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/finexa.png" alt="Finexa">
-                        </div>
-                        <div class="project-info">
-                            <h3>Finexa</h3>
-                            <p>Mobile expense tracking app for recording transactions, categorizing spending, and
-                                gaining financial behavior insights.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span><span>Firebase</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/sportify.png" alt="Sportify">
-                        </div>
-                        <div class="project-info">
-                            <h3>Sportify</h3>
-                            <p>Sports marketplace connecting buyers and sellers of equipment, apparel, and accessories
-                                with seamless browsing.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span><span>Firebase</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/images/projects/studify.png" alt="Studify">
-                        </div>
-                        <div class="project-info">
-                            <h3>Studify</h3>
-                            <p>Study productivity app with scheduling, task management, reminders, and Pomodoro Timer to
-                                improve focus.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span><span>Firebase</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image"
-                            style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-dark),#1a1a2e);">
-                            <i class="fas fa-graduation-cap"
-                                style="font-size:2.5rem;color:var(--accent);opacity:0.6;"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Student Registration System</h3>
-                            <p>Web-based system digitalizing university admissions with streamlined workflows and an
-                                integrated admin dashboard.</p>
-                            <div class="tech-stack">
-                                <span>Java</span><span>Spring Boot</span><span>MySQL</span>
-                            </div>
-                            <a href="#" class="project-cta">Explore Project <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                <div class="tech-stack">
+                  <span>React</span><span>Tailwind CSS</span><span>FastAPI</span
+                  ><span>MySQL</span><span>Supabase</span>
                 </div>
-            </section>
+                <a href="https://jflow07.vercel.app/" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
 
-            <!-- Experience Page -->
-            <section id="experience" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    TIMELINE PAGE
-                </div>
-                <h1 class="page-title">Professional Experience</h1>
-
-                <div class="timeline">
-                    <div class="timeline-line"></div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-node"></div>
-                        <div class="timeline-card" data-tilt>
-                            <div class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> 2026 – Present
-                            </div>
-                            <h3>Data Analyst Intern</h3>
-                            <p>Supporting data analysis and software investigation projects by processing datasets,
-                                identifying patterns, and transforming information into actionable insights.</p>
-                            <div class="tech-stack">
-                                <span>Python</span><span>Data Analytics</span><span>Reporting Tools</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-node"></div>
-                        <div class="timeline-card" data-tilt>
-                            <div class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> 2026 – June 2026
-                            </div>
-                            <h3>Dormitory Person in Charge (PIC)</h3>
-                            <p>Coordinating dormitory operations and ensuring effective communication between students
-                                and university management.</p>
-                            <div class="tech-stack">
-                                <span>Leadership</span><span>Communication</span><span>Organization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-node"></div>
-                        <div class="timeline-card" data-tilt>
-                            <div class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> 2025 – Present
-                            </div>
-                            <h3>Head of Volleyball Club</h3>
-                            <p>Leading organizational planning, coordinating training sessions, and managing team
-                                development for the volleyball club.</p>
-                            <div class="tech-stack">
-                                <span>Leadership</span><span>Team Management</span><span>Strategic Planning</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-node"></div>
-                        <div class="timeline-card" data-tilt>
-                            <div class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> 2024 – Present
-                            </div>
-                            <h3>Software Development Projects</h3>
-                            <p>Designed and developed multiple full-stack web and mobile applications using React,
-                                Flutter, Spring Boot, Laravel, and MySQL.</p>
-                            <div class="tech-stack">
-                                <span>React</span><span>Flutter</span><span>Spring
-                                    Boot</span><span>Laravel</span><span>Firebase</span><span>MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-cards">
-                    <div class="exp-card" data-tilt>
-                        <div class="exp-card-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Full-Stack Development</h3>
-                        <p>Building scalable web and mobile applications using modern frameworks like React, Flutter,
-                            Spring Boot, and Laravel.</p>
-                    </div>
-                    <div class="exp-card devops" data-tilt>
-                        <div class="exp-card-image">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h3>Data Analytics</h3>
-                    </div>
-                    <div class="exp-card stats" data-tilt>
-                        <div class="stat-number" data-count="8">0</div>
-                        <p>LIFETIME PROJECTS</p>
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Page -->
-            <section id="about" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    ABOUT PAGE
-                </div>
-                <h1 class="page-title">About Me</h1>
-                <p class="page-description">
-                    Get to know the person behind the code. My journey, passions, and what drives me to create
-                    exceptional software.
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/projects/flowva.png" alt="Flowva" />
+              </div>
+              <div class="project-info">
+                <h3>Flowva</h3>
+                <p>
+                  Personal finance management platform for tracking income,
+                  expenses, budgets, and visualizing financial performance
+                  through dashboards.
                 </p>
-
-                <div class="about-grid">
-                    <div class="about-main-card" data-tilt>
-                        <div class="about-avatar">
-                            <img src="assets/images/profile/profile.png" alt="Julior Dev">
-                        </div>
-                        <div class="about-content">
-                            <h2>Julior Dev</h2>
-                            <p class="about-role">Full-Stack Developer | Mobile Developer | Data Analytics Enthusiast
-                            </p>
-                            <p class="about-bio">
-                                Full-Stack Developer with a passion for building modern, scalable applications.
-                                Experienced in designing and developing web and mobile solutions using React, Flutter,
-                                Spring Boot, and Laravel.
-                            </p>
-                            <p class="about-bio">
-                                Skilled in data analytics, software architecture, and creating intuitive user
-                                experiences. Continuously exploring emerging technologies to build impactful digital
-                                products.
-                            </p>
-                            <p class="about-bio">
-                                I believe great software delivers meaningful value and exceptional user experiences.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="about-stats-grid">
-                        <div class="about-stat-card" data-tilt>
-                            <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
-                            <div class="stat-value" data-count="8">0</div>
-                            <div class="stat-suffix">+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="about-stat-card" data-tilt>
-                            <div class="stat-icon"><i class="fas fa-code"></i></div>
-                            <div class="stat-value" data-count="6">0</div>
-                            <div class="stat-suffix">+</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                        <div class="about-stat-card" data-tilt>
-                            <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-                            <div class="stat-value" data-count="3">0</div>
-                            <div class="stat-suffix">+</div>
-                            <div class="stat-label">Domains</div>
-                        </div>
-                        <div class="about-stat-card" data-tilt>
-                            <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                            <div class="stat-value" data-count="1">0</div>
-                            <div class="stat-suffix"></div>
-                            <div class="stat-label">Passionate Developer</div>
-                        </div>
-                    </div>
-
-                    <div class="about-details-grid">
-                        <div class="about-detail-card" data-tilt>
-                            <div class="detail-icon"><i class="fas fa-bullseye"></i></div>
-                            <h3>Mission</h3>
-                            <p>To create innovative software solutions that address real-world challenges while
-                                continuously expanding my technical expertise in software engineering, full-stack
-                                development, and data analytics.</p>
-                        </div>
-                        <div class="about-detail-card" data-tilt>
-                            <div class="detail-icon"><i class="fas fa-eye"></i></div>
-                            <h3>Vision</h3>
-                            <p>To become a well-rounded software engineer who builds impactful digital products that
-                                deliver meaningful value, exceptional user experiences, and contribute to technological
-                                advancement.</p>
-                        </div>
-                        <div class="about-detail-card" data-tilt>
-                            <div class="detail-icon"><i class="fas fa-heart"></i></div>
-                            <h3>Passion</h3>
-                            <p>Building modern, scalable applications using clean architecture and intuitive design.
-                                Every project is an opportunity to learn, grow, and create something that makes a
-                                difference.</p>
-                        </div>
-                    </div>
-
-                    <div class="about-interests">
-                        <h3><i class="fas fa-star"></i> Beyond Code</h3>
-                        <div class="interests-grid">
-                            <div class="interest-item">
-                                <i class="fas fa-music"></i>
-                                <span>Music</span>
-                            </div>
-                            <div class="interest-item">
-                                <i class="fas fa-running"></i>
-                                <span>Sport</span>
-                            </div>
-                            <div class="interest-item">
-                                <i class="fas fa-camera"></i>
-                                <span>Photography</span>
-                            </div>
-                            <div class="interest-item">
-                                <i class="fas fa-book-open"></i>
-                                <span>Reading</span>
-                            </div>
-                            <div class="interest-item">
-                                <i class="fas fa-paint-brush"></i>
-                                <span>Styling</span>
-                            </div>
-                            <div class="interest-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Cooking</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tech-stack">
+                  <span>Flutter</span><span>Laravel</span
+                  ><span>PostgreSQL</span>
                 </div>
-            </section>
+                <a href="#" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
 
-            <!-- Contact Page -->
-            <section id="contact" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    CONTACT PAGE FILE
-                </div>
-                <h1 class="page-title">Get In Touch</h1>
-                <p class="page-description">
-                    I'm always open to discussing new projects or creative ideas. Let's connect and build something
-                    amazing together.
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/projects/finexa.png" alt="Finexa" />
+              </div>
+              <div class="project-info">
+                <h3>Finexa</h3>
+                <p>
+                  Mobile expense tracking app for recording transactions,
+                  categorizing spending, and gaining financial behavior
+                  insights.
                 </p>
-
-                <div class="contact-grid">
-                    <a href="tel:+6282271514570" class="contact-card phone" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3>Phone</h3>
-                        <p class="contact-value">+62 822 7151 4570</p>
-                        <span class="contact-label">Mon - Fri, 9am - 6pm WIB</span>
-                    </a>
-
-                    <a href="mailto:juliorwaruwu7@gmail.com" class="contact-card email" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p class="contact-value">juliorwaruwu7@gmail.com</p>
-                        <span class="contact-label">Reply within 24 hours</span>
-                    </a>
-
-                    <a href="https://maps.google.com/?q=Bekasi,Indonesia" target="_blank" class="contact-card location"
-                        data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Location</h3>
-                        <p class="contact-value">Bekasi, Indonesia</p>
-                        <span class="contact-label">Available for remote work</span>
-                    </a>
-
-                    <a href="https://github.com/juliorwaruwu" target="_blank" class="contact-card github" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p class="contact-value">juliorwaruwu</p>
-                        <span class="contact-label">Open source contributor</span>
-                    </a>
-
-                    <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="contact-card linkedin"
-                        data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p class="contact-value">juliorwaruwu</p>
-                        <span class="contact-label">Let's connect professionally</span>
-                    </a>
-
-                    <a href="https://www.instagram.com/juliorwru" class="contact-card instagram" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h3>Instagram</h3>
-                        <p class="contact-value">juliorwru</p>
-                        <span class="contact-label">Behind the scenes</span>
-                    </a>
-
-                    <a href="#" class="contact-card twitter" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <h3>Twitter / X</h3>
-                        <p class="contact-value">Coming Soon</p>
-                        <span class="contact-label">Tech thoughts & updates</span>
-                    </a>
-
-                    <a href="#" class="contact-card facebook" data-tilt>
-                        <div class="contact-icon-wrapper">
-                            <i class="fab fa-facebook"></i>
-                        </div>
-                        <h3>Facebook</h3>
-                        <p class="contact-value">Coming Soon</p>
-                        <span class="contact-label">Connect with me</span>
-                    </a>
+                <div class="tech-stack">
+                  <span>Flutter</span><span>Firebase</span>
                 </div>
+                <a href="#" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
 
-                <div class="contact-cta">
-                    <div class="cta-card" data-tilt>
-                        <i class="fas fa-paper-plane"></i>
-                        <h3>Send me a message</h3>
-                        <p>Have a project in mind? Let's talk about it.</p>
-                        <a href="mailto:juliorwaruwu7@gmail.com" class="cta-btn magnetic">
-                            <i class="fas fa-comments"></i> Start Conversation
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Settings Page -->
-            <section id="settings" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    SETTINGS PAGE FILE
-                </div>
-                <h1 class="page-title">Settings</h1>
-                <p class="page-description">
-                    Customize your experience. Change themes, languages, and appearance
-                    to match your personal preferences.
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/projects/sportify.png" alt="Sportify" />
+              </div>
+              <div class="project-info">
+                <h3>Sportify</h3>
+                <p>
+                  Sports marketplace connecting buyers and sellers of equipment,
+                  apparel, and accessories with seamless browsing.
                 </p>
-
-                <div class="settings-tabs" role="tablist">
-                    <button class="settings-tab active" data-tab="appearance" role="tab" aria-selected="true">
-                        <i class="fas fa-palette"></i> Appearance
-                    </button>
-                    <button class="settings-tab" data-tab="general" role="tab" aria-selected="false">
-                        <i class="fas fa-sliders-h"></i> General
-                    </button>
-                    <button class="settings-tab" data-tab="language" role="tab" aria-selected="false">
-                        <i class="fas fa-globe"></i> Language
-                    </button>
+                <div class="tech-stack">
+                  <span>Flutter</span><span>Firebase</span>
                 </div>
+                <a href="#" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
 
-                <!-- Appearance Panel -->
-                <div class="settings-tab-panel active" id="settings-appearance" role="tabpanel">
-                    <div class="settings-grid">
-                        <!-- Theme Section -->
-                        <div class="settings-section">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-palette"></i></div>
-                                <div>
-                                    <h3>Theme</h3>
-                                    <p>Choose your preferred color theme</p>
-                                </div>
-                            </div>
-                            <div class="theme-grid">
-                                <div class="theme-option active" data-theme="indigo">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #6366f1, #a855f7)"></div>
-                                    <span>Indigo</span>
-                                </div>
-                                <div class="theme-option" data-theme="ocean">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #0ea5e9, #06b6d4)"></div>
-                                    <span>Ocean</span>
-                                </div>
-                                <div class="theme-option" data-theme="emerald">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #10b981, #34d399)"></div>
-                                    <span>Emerald</span>
-                                </div>
-                                <div class="theme-option" data-theme="rose">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #f43f5e, #fb7185)"></div>
-                                    <span>Rose</span>
-                                </div>
-                                <div class="theme-option" data-theme="amber">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #f59e0b, #fbbf24)"></div>
-                                    <span>Amber</span>
-                                </div>
-                                <div class="theme-option" data-theme="sunset">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #f97316, #ef4444)"></div>
-                                    <span>Sunset</span>
-                                </div>
-                                <div class="theme-option" data-theme="midnight">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #1e1b4b, #312e81)"></div>
-                                    <span>Midnight</span>
-                                </div>
-                                <div class="theme-option" data-theme="forest">
-                                    <div class="theme-preview"
-                                        style="background: linear-gradient(135deg, #166534, #15803d)"></div>
-                                    <span>Forest</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Appearance Section -->
-                        <div class="settings-section">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-sun"></i></div>
-                                <div>
-                                    <h3>Appearance</h3>
-                                    <p>Adjust the look and feel</p>
-                                </div>
-                            </div>
-                            <div class="appearance-options">
-                                <div class="appearance-card active" data-mode="light">
-                                    <i class="fas fa-sun"></i>
-                                    <span>Light Mode</span>
-                                    <small>Clean and bright</small>
-                                </div>
-                                <div class="appearance-card" data-mode="dark">
-                                    <i class="fas fa-moon"></i>
-                                    <span>Dark Mode</span>
-                                    <small>Easy on the eyes</small>
-                                </div>
-                                <div class="appearance-card" data-mode="auto">
-                                    <i class="fas fa-adjust"></i>
-                                    <span>Auto</span>
-                                    <small>Match system</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- General Panel -->
-                <div class="settings-tab-panel" id="settings-general" role="tabpanel">
-                    <div class="settings-grid">
-                        <!-- Font Size Section -->
-                        <div class="settings-section">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-text-height"></i></div>
-                                <div>
-                                    <h3>Font Size</h3>
-                                    <p>Adjust text size for readability</p>
-                                </div>
-                            </div>
-                            <div class="font-size-options">
-                                <button class="font-size-btn" data-size="small">Small</button>
-                                <button class="font-size-btn active" data-size="medium">Medium</button>
-                                <button class="font-size-btn" data-size="large">Large</button>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Position -->
-                        <div class="settings-section">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-columns"></i></div>
-                                <div>
-                                    <h3>Sidebar Position</h3>
-                                    <p>Choose sidebar placement</p>
-                                </div>
-                            </div>
-                            <div class="sidebar-position-options">
-                                <div class="sidebar-pos-card active" data-pos="left">
-                                    <i class="fas fa-arrow-left"></i>
-                                    <span>Left</span>
-                                </div>
-                                <div class="sidebar-pos-card" data-pos="right">
-                                    <i class="fas fa-arrow-right"></i>
-                                    <span>Right</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Animations Toggle -->
-                        <div class="settings-section settings-section--wide">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-magic"></i></div>
-                                <div>
-                                    <h3>Animations</h3>
-                                    <p>Enable or disable animations</p>
-                                </div>
-                            </div>
-                            <div class="toggle-options">
-                                <div class="toggle-row">
-                                    <span>3D Card Effects</span>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="toggle-row">
-                                    <span>Particle Background</span>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="toggle-row">
-                                    <span>Page Transitions</span>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="toggle-row">
-                                    <span>3D Background</span>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Language Panel -->
-                <div class="settings-tab-panel" id="settings-language" role="tabpanel">
-                    <div class="settings-grid settings-grid--single">
-                        <!-- Language Section -->
-                        <div class="settings-section">
-                            <div class="settings-section-header">
-                                <div class="settings-icon"><i class="fas fa-globe"></i></div>
-                                <div>
-                                    <h3>Language</h3>
-                                    <p>Select your preferred language</p>
-                                </div>
-                            </div>
-                            <div class="language-grid">
-                                <div class="language-option active" data-lang="en">
-                                    <span class="lang-flag">EN</span>
-                                    <div>
-                                        <span class="lang-name">English</span>
-                                        <small>United States</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="language-option" data-lang="id">
-                                    <span class="lang-flag">ID</span>
-                                    <div>
-                                        <span class="lang-name">Bahasa Indonesia</span>
-                                        <small>Indonesia</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="language-option" data-lang="ja">
-                                    <span class="lang-flag">JA</span>
-                                    <div>
-                                        <span class="lang-name">Japanese</span>
-                                        <small>Japan</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="language-option" data-lang="ko">
-                                    <span class="lang-flag">KO</span>
-                                    <div>
-                                        <span class="lang-name">Korean</span>
-                                        <small>South Korea</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="language-option" data-lang="es">
-                                    <span class="lang-flag">ES</span>
-                                    <div>
-                                        <span class="lang-name">Spanish</span>
-                                        <small>Español</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="language-option" data-lang="de">
-                                    <span class="lang-flag">DE</span>
-                                    <div>
-                                        <span class="lang-name">German</span>
-                                        <small>Deutsch</small>
-                                    </div>
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Support Page -->
-            <section id="support" class="page">
-                <div class="page-banner">
-                    <span class="banner-icon"><i class="fas fa-terminal"></i></span>
-                    SUPPORT PAGE FILE
-                </div>
-                <h1 class="page-title">Support Center</h1>
-                <p class="page-description">
-                    Need help? Find answers to common questions or reach out to our support team.
-                    We're here to help you succeed.
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/images/projects/studify.png" alt="Studify" />
+              </div>
+              <div class="project-info">
+                <h3>Studify</h3>
+                <p>
+                  Study productivity app with scheduling, task management,
+                  reminders, and Pomodoro Timer to improve focus.
                 </p>
-
-                <div class="support-grid">
-                    <!-- Quick Actions -->
-                    <div class="support-quick-actions">
-                        <div class="support-action-card" data-tilt>
-                            <div class="support-action-icon"><i class="fas fa-book"></i></div>
-                            <h3>Documentation</h3>
-                            <p>Browse our comprehensive guides and tutorials</p>
-                            <span class="support-link">Read Docs <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                        <div class="support-action-card" data-tilt>
-                            <div class="support-action-icon"><i class="fas fa-video"></i></div>
-                            <h3>Video Tutorials</h3>
-                            <p>Watch step-by-step video guides</p>
-                            <span class="support-link">Watch Now <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                        <div class="support-action-card" data-tilt>
-                            <div class="support-action-icon"><i class="fas fa-comments"></i></div>
-                            <h3>Live Chat</h3>
-                            <p>Chat with our support team in real-time</p>
-                            <span class="support-link">Start Chat <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Section -->
-                    <div class="support-faq">
-                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>How can I contact Julior for a project?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>You can reach out through the Contact page, email at juliorwaruwu7@gmail.com,
-                                    or connect via LinkedIn. typically responds within 24 hours on business days.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>What technologies does Julior specialize in?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Julior specializes in full-stack development including React, Node.js, Python,
-                                    Go, AWS, Docker, and Kubernetes. With expertise in both frontend and backend
-                                    technologies.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>Does Julior take freelance projects?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes! Julior is available for freelance projects, consulting, and full-time
-                                    opportunities. Feel free to reach out to discuss your project requirements.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>What is the typical project turnaround time?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Project timelines vary based on scope and complexity. A typical web application
-                                    takes 4-8 weeks. Detailed timelines are provided during the initial consultation.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>Can I request a code review or consultation?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Absolutely! Code reviews and technical consultations are available.
-                                    Reach out via email or LinkedIn to schedule a session.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item" data-tilt>
-                            <div class="faq-question">
-                                <span>How can I collaborate on an open source project?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Check out the GitHub profile for active open source projects. Contributions
-                                    are always welcome! Fork the repo, create a branch, and submit a pull request.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Support Contact -->
-                    <div class="support-contact">
-                        <div class="support-contact-card" data-tilt>
-                            <i class="fas fa-headset"></i>
-                            <h3>Still need help?</h3>
-                            <p>Our support team is available 24/7 to assist you with any questions or concerns.</p>
-                            <div class="support-contact-methods">
-                                <div class="support-method">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>juliorwaruwu7@gmail.com</span>
-                                </div>
-                                <div class="support-method">
-                                    <i class="fas fa-phone"></i>
-                                    <span>+62 822 7151 4570</span>
-                                </div>
-                            </div>
-                            <button class="cta-btn magnetic">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                        </div>
-                    </div>
+                <div class="tech-stack">
+                  <span>Flutter</span><span>Firebase</span>
                 </div>
-            </section>
-        </main>
+                <a href="#" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: linear-gradient(135deg, var(--bg-dark), #1a1a2e);
+                "
+              >
+                <i
+                  class="fas fa-graduation-cap"
+                  style="font-size: 2.5rem; color: var(--accent); opacity: 0.6"
+                ></i>
+              </div>
+              <div class="project-info">
+                <h3>Student Registration System</h3>
+                <p>
+                  Web-based system digitalizing university admissions with
+                  streamlined workflows and an integrated admin dashboard.
+                </p>
+                <div class="tech-stack">
+                  <span>Java</span><span>Spring Boot</span><span>MySQL</span>
+                </div>
+                <a href="#" class="project-cta"
+                  >Explore Project <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Page -->
+        <section id="experience" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            TIMELINE PAGE
+          </div>
+          <h1 class="page-title">Professional Experience</h1>
+
+          <div class="timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-card" data-tilt>
+                <div class="timeline-date">
+                  <i class="fas fa-calendar-alt"></i> 2026 – Present
+                </div>
+                <h3>Data Analyst Intern</h3>
+                <p>
+                  Supporting data analysis and software investigation projects
+                  by processing datasets, identifying patterns, and transforming
+                  information into actionable insights.
+                </p>
+                <div class="tech-stack">
+                  <span>Python</span><span>Data Analytics</span
+                  ><span>Reporting Tools</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-card" data-tilt>
+                <div class="timeline-date">
+                  <i class="fas fa-calendar-alt"></i> 2026 – June 2026
+                </div>
+                <h3>Dormitory Person in Charge (PIC)</h3>
+                <p>
+                  Coordinating dormitory operations and ensuring effective
+                  communication between students and university management.
+                </p>
+                <div class="tech-stack">
+                  <span>Leadership</span><span>Communication</span
+                  ><span>Organization</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-card" data-tilt>
+                <div class="timeline-date">
+                  <i class="fas fa-calendar-alt"></i> 2025 – Present
+                </div>
+                <h3>Head of Volleyball Club</h3>
+                <p>
+                  Leading organizational planning, coordinating training
+                  sessions, and managing team development for the volleyball
+                  club.
+                </p>
+                <div class="tech-stack">
+                  <span>Leadership</span><span>Team Management</span
+                  ><span>Strategic Planning</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-card" data-tilt>
+                <div class="timeline-date">
+                  <i class="fas fa-calendar-alt"></i> 2024 – Present
+                </div>
+                <h3>Software Development Projects</h3>
+                <p>
+                  Designed and developed multiple full-stack web and mobile
+                  applications using React, Flutter, Spring Boot, Laravel, and
+                  MySQL.
+                </p>
+                <div class="tech-stack">
+                  <span>React</span><span>Flutter</span><span>Spring Boot</span
+                  ><span>Laravel</span><span>Firebase</span><span>MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-cards">
+            <div class="exp-card" data-tilt>
+              <div class="exp-card-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Full-Stack Development</h3>
+              <p>
+                Building scalable web and mobile applications using modern
+                frameworks like React, Flutter, Spring Boot, and Laravel.
+              </p>
+            </div>
+            <div class="exp-card devops" data-tilt>
+              <div class="exp-card-image">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h3>Data Analytics</h3>
+            </div>
+            <div class="exp-card stats" data-tilt>
+              <div class="stat-number" data-count="8">0</div>
+              <p>LIFETIME PROJECTS</p>
+              <i class="fas fa-trophy"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            ABOUT PAGE
+          </div>
+          <h1 class="page-title">About Me</h1>
+          <p class="page-description">
+            Get to know the person behind the code. My journey, passions, and
+            what drives me to create exceptional software.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-main-card" data-tilt>
+              <div class="about-avatar">
+                <img src="assets/images/profile/profile.png" alt="Julior Dev" />
+              </div>
+              <div class="about-content">
+                <h2>Julior Dev</h2>
+                <p class="about-role">
+                  Full-Stack Developer | Mobile Developer | Data Analytics
+                  Enthusiast
+                </p>
+                <p class="about-bio">
+                  Full-Stack Developer with a passion for building modern,
+                  scalable applications. Experienced in designing and developing
+                  web and mobile solutions using React, Flutter, Spring Boot,
+                  and Laravel.
+                </p>
+                <p class="about-bio">
+                  Skilled in data analytics, software architecture, and creating
+                  intuitive user experiences. Continuously exploring emerging
+                  technologies to build impactful digital products.
+                </p>
+                <p class="about-bio">
+                  I believe great software delivers meaningful value and
+                  exceptional user experiences.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-stats-grid">
+              <div class="about-stat-card" data-tilt>
+                <div class="stat-icon">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stat-value" data-count="8">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="about-stat-card" data-tilt>
+                <div class="stat-icon"><i class="fas fa-code"></i></div>
+                <div class="stat-value" data-count="6">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-label">Technologies</div>
+              </div>
+              <div class="about-stat-card" data-tilt>
+                <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                <div class="stat-value" data-count="3">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-label">Domains</div>
+              </div>
+              <div class="about-stat-card" data-tilt>
+                <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                <div class="stat-value" data-count="1">0</div>
+                <div class="stat-suffix"></div>
+                <div class="stat-label">Passionate Developer</div>
+              </div>
+            </div>
+
+            <div class="about-details-grid">
+              <div class="about-detail-card" data-tilt>
+                <div class="detail-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Mission</h3>
+                <p>
+                  To create innovative software solutions that address
+                  real-world challenges while continuously expanding my
+                  technical expertise in software engineering, full-stack
+                  development, and data analytics.
+                </p>
+              </div>
+              <div class="about-detail-card" data-tilt>
+                <div class="detail-icon"><i class="fas fa-eye"></i></div>
+                <h3>Vision</h3>
+                <p>
+                  To become a well-rounded software engineer who builds
+                  impactful digital products that deliver meaningful value,
+                  exceptional user experiences, and contribute to technological
+                  advancement.
+                </p>
+              </div>
+              <div class="about-detail-card" data-tilt>
+                <div class="detail-icon"><i class="fas fa-heart"></i></div>
+                <h3>Passion</h3>
+                <p>
+                  Building modern, scalable applications using clean
+                  architecture and intuitive design. Every project is an
+                  opportunity to learn, grow, and create something that makes a
+                  difference.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-interests">
+              <h3><i class="fas fa-star"></i> Beyond Code</h3>
+              <div class="interests-grid">
+                <div class="interest-item">
+                  <i class="fas fa-music"></i>
+                  <span>Music</span>
+                </div>
+                <div class="interest-item">
+                  <i class="fas fa-running"></i>
+                  <span>Sport</span>
+                </div>
+                <div class="interest-item">
+                  <i class="fas fa-camera"></i>
+                  <span>Photography</span>
+                </div>
+                <div class="interest-item">
+                  <i class="fas fa-book-open"></i>
+                  <span>Reading</span>
+                </div>
+                <div class="interest-item">
+                  <i class="fas fa-paint-brush"></i>
+                  <span>Styling</span>
+                </div>
+                <div class="interest-item">
+                  <i class="fas fa-utensils"></i>
+                  <span>Cooking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            CONTACT PAGE FILE
+          </div>
+          <h1 class="page-title">Get In Touch</h1>
+          <p class="page-description">
+            I'm always open to discussing new projects or creative ideas. Let's
+            connect and build something amazing together.
+          </p>
+
+          <div class="contact-grid">
+            <a href="tel:+6282271514570" class="contact-card phone" data-tilt>
+              <div class="contact-icon-wrapper">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h3>Phone</h3>
+              <p class="contact-value">+62 822 7151 4570</p>
+              <span class="contact-label">Mon - Fri, 9am - 6pm WIB</span>
+            </a>
+
+            <a
+              href="mailto:juliorwaruwu7@gmail.com"
+              class="contact-card email"
+              data-tilt
+            >
+              <div class="contact-icon-wrapper">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <p class="contact-value">juliorwaruwu7@gmail.com</p>
+              <span class="contact-label">Reply within 24 hours</span>
+            </a>
+
+            <a
+              href="https://maps.google.com/?q=Bekasi,Indonesia"
+              target="_blank"
+              class="contact-card location"
+              data-tilt
+            >
+              <div class="contact-icon-wrapper">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Location</h3>
+              <p class="contact-value">Bekasi, Indonesia</p>
+              <span class="contact-label">Available for remote work</span>
+            </a>
+
+            <a
+              href="https://github.com/juliorwaruwu"
+              target="_blank"
+              class="contact-card github"
+              data-tilt
+            >
+              <div class="contact-icon-wrapper">
+                <i class="fab fa-github"></i>
+              </div>
+              <h3>GitHub</h3>
+              <p class="contact-value">juliorwaruwu</p>
+              <span class="contact-label">Open source contributor</span>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/juliorwaruwu"
+              target="_blank"
+              class="contact-card linkedin"
+              data-tilt
+            >
+              <div class="contact-icon-wrapper">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <h3>LinkedIn</h3>
+              <p class="contact-value">juliorwaruwu</p>
+              <span class="contact-label">Let's connect professionally</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/juliorwru"
+              class="contact-card instagram"
+              data-tilt
+            >
+              <div class="contact-icon-wrapper">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <h3>Instagram</h3>
+              <p class="contact-value">juliorwru</p>
+              <span class="contact-label">Behind the scenes</span>
+            </a>
+
+            <a href="#" class="contact-card twitter" data-tilt>
+              <div class="contact-icon-wrapper">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <h3>Twitter / X</h3>
+              <p class="contact-value">Coming Soon</p>
+              <span class="contact-label">Tech thoughts & updates</span>
+            </a>
+
+            <a href="#" class="contact-card facebook" data-tilt>
+              <div class="contact-icon-wrapper">
+                <i class="fab fa-facebook"></i>
+              </div>
+              <h3>Facebook</h3>
+              <p class="contact-value">Coming Soon</p>
+              <span class="contact-label">Connect with me</span>
+            </a>
+          </div>
+
+          <div class="contact-cta">
+            <div class="cta-card" data-tilt>
+              <i class="fas fa-paper-plane"></i>
+              <h3>Send me a message</h3>
+              <p>Have a project in mind? Let's talk about it.</p>
+              <a href="tel:+6282271514570" class="cta-btn magnetic">
+                <i class="fas fa-comments"></i> Start Conversation
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings Page -->
+        <section id="settings" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            SETTINGS PAGE FILE
+          </div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-description">
+            Customize your experience. Change themes, languages, and appearance
+            to match your personal preferences.
+          </p>
+
+          <div class="settings-tabs" role="tablist">
+            <button
+              class="settings-tab active"
+              data-tab="appearance"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="fas fa-palette"></i> Appearance
+            </button>
+            <button
+              class="settings-tab"
+              data-tab="general"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-sliders-h"></i> General
+            </button>
+            <button
+              class="settings-tab"
+              data-tab="language"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-globe"></i> Language
+            </button>
+          </div>
+
+          <!-- Appearance Panel -->
+          <div
+            class="settings-tab-panel active"
+            id="settings-appearance"
+            role="tabpanel"
+          >
+            <div class="settings-grid">
+              <!-- Theme Section -->
+              <div class="settings-section">
+                <div class="settings-section-header">
+                  <div class="settings-icon">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <div>
+                    <h3>Theme</h3>
+                    <p>Choose your preferred color theme</p>
+                  </div>
+                </div>
+                <div class="theme-grid">
+                  <div class="theme-option active" data-theme="indigo">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #6366f1, #a855f7);
+                      "
+                    ></div>
+                    <span>Indigo</span>
+                  </div>
+                  <div class="theme-option" data-theme="ocean">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+                      "
+                    ></div>
+                    <span>Ocean</span>
+                  </div>
+                  <div class="theme-option" data-theme="emerald">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #10b981, #34d399);
+                      "
+                    ></div>
+                    <span>Emerald</span>
+                  </div>
+                  <div class="theme-option" data-theme="rose">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #f43f5e, #fb7185);
+                      "
+                    ></div>
+                    <span>Rose</span>
+                  </div>
+                  <div class="theme-option" data-theme="amber">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #f59e0b, #fbbf24);
+                      "
+                    ></div>
+                    <span>Amber</span>
+                  </div>
+                  <div class="theme-option" data-theme="sunset">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #f97316, #ef4444);
+                      "
+                    ></div>
+                    <span>Sunset</span>
+                  </div>
+                  <div class="theme-option" data-theme="midnight">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #1e1b4b, #312e81);
+                      "
+                    ></div>
+                    <span>Midnight</span>
+                  </div>
+                  <div class="theme-option" data-theme="forest">
+                    <div
+                      class="theme-preview"
+                      style="
+                        background: linear-gradient(135deg, #166534, #15803d);
+                      "
+                    ></div>
+                    <span>Forest</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Appearance Section -->
+              <div class="settings-section">
+                <div class="settings-section-header">
+                  <div class="settings-icon"><i class="fas fa-sun"></i></div>
+                  <div>
+                    <h3>Appearance</h3>
+                    <p>Adjust the look and feel</p>
+                  </div>
+                </div>
+                <div class="appearance-options">
+                  <div class="appearance-card" data-mode="light">
+                    <i class="fas fa-sun"></i>
+                    <span>Light Mode</span>
+                    <small>Clean and bright</small>
+                  </div>
+                  <div class="appearance-card" data-mode="dark">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                    <small>Easy on the eyes</small>
+                  </div>
+                  <div class="appearance-card active" data-mode="auto">
+                    <i class="fas fa-adjust"></i>
+                    <span>Auto</span>
+                    <small>Match system</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- General Panel -->
+          <div class="settings-tab-panel" id="settings-general" role="tabpanel">
+            <div class="settings-grid">
+              <!-- Font Size Section -->
+              <div class="settings-section">
+                <div class="settings-section-header">
+                  <div class="settings-icon">
+                    <i class="fas fa-text-height"></i>
+                  </div>
+                  <div>
+                    <h3>Font Size</h3>
+                    <p>Adjust text size for readability</p>
+                  </div>
+                </div>
+                <div class="font-size-options">
+                  <button class="font-size-btn" data-size="small">Small</button>
+                  <button class="font-size-btn active" data-size="medium">
+                    Medium
+                  </button>
+                  <button class="font-size-btn" data-size="large">Large</button>
+                </div>
+              </div>
+
+              <!-- Sidebar Position -->
+              <div class="settings-section">
+                <div class="settings-section-header">
+                  <div class="settings-icon">
+                    <i class="fas fa-columns"></i>
+                  </div>
+                  <div>
+                    <h3>Sidebar Position</h3>
+                    <p>Choose sidebar placement</p>
+                  </div>
+                </div>
+                <div class="sidebar-position-options">
+                  <div class="sidebar-pos-card active" data-pos="left">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Left</span>
+                  </div>
+                  <div class="sidebar-pos-card" data-pos="right">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>Right</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Animations Toggle -->
+              <div class="settings-section settings-section--wide">
+                <div class="settings-section-header">
+                  <div class="settings-icon"><i class="fas fa-magic"></i></div>
+                  <div>
+                    <h3>Animations</h3>
+                    <p>Enable or disable animations</p>
+                  </div>
+                </div>
+                <div class="toggle-options">
+                  <div class="toggle-row">
+                    <span>3D Card Effects</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked />
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="toggle-row">
+                    <span>Particle Background</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked />
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="toggle-row">
+                    <span>Page Transitions</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked />
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div class="toggle-row">
+                    <span>3D Background</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked />
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Language Panel -->
+          <div
+            class="settings-tab-panel"
+            id="settings-language"
+            role="tabpanel"
+          >
+            <div class="settings-grid settings-grid--single">
+              <!-- Language Section -->
+              <div class="settings-section">
+                <div class="settings-section-header">
+                  <div class="settings-icon"><i class="fas fa-globe"></i></div>
+                  <div>
+                    <h3>Language</h3>
+                    <p>Select your preferred language</p>
+                  </div>
+                </div>
+                <div class="language-grid">
+                  <div class="language-option active" data-lang="en">
+                    <span class="lang-flag">EN</span>
+                    <div>
+                      <span class="lang-name">English</span>
+                      <small>United States</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="language-option" data-lang="id">
+                    <span class="lang-flag">ID</span>
+                    <div>
+                      <span class="lang-name">Bahasa Indonesia</span>
+                      <small>Indonesia</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="language-option" data-lang="ja">
+                    <span class="lang-flag">JA</span>
+                    <div>
+                      <span class="lang-name">Japanese</span>
+                      <small>Japan</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="language-option" data-lang="ko">
+                    <span class="lang-flag">KO</span>
+                    <div>
+                      <span class="lang-name">Korean</span>
+                      <small>South Korea</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="language-option" data-lang="es">
+                    <span class="lang-flag">ES</span>
+                    <div>
+                      <span class="lang-name">Spanish</span>
+                      <small>Español</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="language-option" data-lang="de">
+                    <span class="lang-flag">DE</span>
+                    <div>
+                      <span class="lang-name">German</span>
+                      <small>Deutsch</small>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support Page -->
+        <section id="support" class="page">
+          <div class="page-banner">
+            <span class="banner-icon"><i class="fas fa-terminal"></i></span>
+            SUPPORT PAGE FILE
+          </div>
+          <h1 class="page-title">Support Center</h1>
+          <p class="page-description">
+            Need help? Find answers to common questions or reach out to our
+            support team. We're here to help you succeed.
+          </p>
+
+          <div class="support-grid">
+            <!-- Quick Actions -->
+            <div class="support-quick-actions">
+              <div class="support-action-card" data-tilt>
+                <div class="support-action-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Documentation</h3>
+                <p>Browse our comprehensive guides and tutorials</p>
+                <span class="support-link"
+                  >Read Docs <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+              <div class="support-action-card" data-tilt>
+                <div class="support-action-icon">
+                  <i class="fas fa-video"></i>
+                </div>
+                <h3>Video Tutorials</h3>
+                <p>Watch step-by-step video guides</p>
+                <span class="support-link"
+                  >Watch Now <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+              <div class="support-action-card" data-tilt>
+                <div class="support-action-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+
+                <h3>Live Chat</h3>
+                <p>Chat with our support team in real-time</p>
+
+                <a
+                  href="https://wa.me/6282271514570"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="support-link">
+                    Start Chat <i class="fas fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="support-faq">
+              <h2>
+                <i class="fas fa-question-circle"></i> Frequently Asked
+                Questions
+              </h2>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>How can I contact Julior for a project?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    You can reach out through the Contact page, email at
+                    juliorwaruwu7@gmail.com, or connect via LinkedIn. typically
+                    responds within 24 hours on business days.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>What technologies does Julior specialize in?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Julior specializes in full-stack development including
+                    React, Node.js, Python, Go, AWS, Docker, and Kubernetes.
+                    With expertise in both frontend and backend technologies.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>Does Julior take freelance projects?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Yes! Julior is available for freelance projects, consulting,
+                    and full-time opportunities. Feel free to reach out to
+                    discuss your project requirements.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>What is the typical project turnaround time?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Project timelines vary based on scope and complexity. A
+                    typical web application takes 4-8 weeks. Detailed timelines
+                    are provided during the initial consultation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>Can I request a code review or consultation?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Absolutely! Code reviews and technical consultations are
+                    available. Reach out via email or LinkedIn to schedule a
+                    session.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-tilt>
+                <div class="faq-question">
+                  <span>How can I collaborate on an open source project?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Check out the GitHub profile for active open source
+                    projects. Contributions are always welcome! Fork the repo,
+                    create a branch, and submit a pull request.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Support Contact -->
+            <div class="support-contact">
+              <div class="support-contact-card" data-tilt>
+                <i class="fas fa-headset"></i>
+                <h3>Still need help?</h3>
+                <p>
+                  Our support team is available 24/7 to assist you with any
+                  questions or concerns.
+                </p>
+                <div class="support-contact-methods">
+                  <div class="support-method">
+                    <i class="fas fa-envelope"></i>
+                    <span>juliorwaruwu7@gmail.com</span>
+                  </div>
+                  <div class="support-method">
+                    <i class="fas fa-phone"></i>
+                    <span>+62 822 7151 4570</span>
+                  </div>
+                </div>
+                <button class="cta-btn magnetic">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <footer class="footer">
-        <div class="footer-left">
-            <a href="#home" class="nav-link" data-page="home"><strong>Julior</strong></a>
-            <span>&copy; 2026 Built with precision.</span>
-        </div>
-        <div class="footer-right">
-            <a href="https://linkedin.com/in/juliorwaruwu" target="_blank" class="social-link linkedin"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/juliorwaruwu" target="_blank" class="social-link github"><i
-                    class="fab fa-github"></i></a>
-            <a href="https://wa.me/6282271514570" target="_blank" class="social-link whatsapp"><i
-                    class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/" target="_blank" class="social-link instagram"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/" target="_blank" class="social-link twitter"><i
-                    class="fab fa-twitter"></i></a>
-            <a href="https://facebook.com/" target="_blank" class="social-link facebook"><i
-                    class="fab fa-facebook"></i></a>
-            <a href="mailto:juliorwaruwu7@gmail.com" class="social-link email"><i class="fas fa-envelope"></i></a>
-        </div>
+      <div class="footer-left">
+        <a href="#home" class="nav-link" data-page="home"
+          ><strong>Julior</strong></a
+        >
+        <span>&copy; 2026 Built with precision.</span>
+      </div>
+      <div class="footer-right">
+        <a
+          href="https://linkedin.com/in/juliorwaruwu"
+          target="_blank"
+          class="social-link linkedin"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/juliorwaruwu"
+          target="_blank"
+          class="social-link github"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://wa.me/6282271514570"
+          target="_blank"
+          class="social-link whatsapp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://instagram.com/"
+          target="_blank"
+          class="social-link instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          class="social-link twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          href="https://facebook.com/"
+          target="_blank"
+          class="social-link facebook"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="mailto:juliorwaruwu7@gmail.com" class="social-link email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
     </footer>
 
     <!-- Mobile Bottom Nav -->
     <nav class="mobile-nav">
-        <a href="#home" class="mobile-nav-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="#skills" class="mobile-nav-link" data-page="skills"><i class="fas fa-code"></i><span>Skills</span></a>
-        <a href="#projects" class="mobile-nav-link" data-page="projects"><i
-                class="fas fa-folder"></i><span>Projects</span></a>
-        <a href="#experience" class="mobile-nav-link" data-page="experience"><i
-                class="fas fa-briefcase"></i><span>Exp</span></a>
-        <a href="#contact" class="mobile-nav-link" data-page="contact"><i
-                class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="#home" class="mobile-nav-link active" data-page="home"
+        ><i class="fas fa-home"></i><span>Home</span></a
+      >
+      <a href="#skills" class="mobile-nav-link" data-page="skills"
+        ><i class="fas fa-code"></i><span>Skills</span></a
+      >
+      <a href="#projects" class="mobile-nav-link" data-page="projects"
+        ><i class="fas fa-folder"></i><span>Projects</span></a
+      >
+      <a href="#experience" class="mobile-nav-link" data-page="experience"
+        ><i class="fas fa-briefcase"></i><span>Exp</span></a
+      >
+      <a href="#contact" class="mobile-nav-link" data-page="contact"
+        ><i class="fas fa-envelope"></i><span>Contact</span></a
+      >
     </nav>
 
     <script type="module" src="src/js/main.js"></script>
-</body>
-
+  </body>
 </html>

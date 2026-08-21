@@ -1,6 +1,6 @@
 export const state = {
     theme: 'indigo',
-    mode: 'light',
+    mode: 'auto',
     language: 'en',
     fontSize: 'medium',
     sidebarPos: 'left',

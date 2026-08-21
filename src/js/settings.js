@@ -25,7 +25,12 @@ function applyTheme(name) {
 }
 
 function applyMode(mode) {
-    state.mode = mode;
+    if (mode === 'auto') {
+        state.mode = 'auto';
+        mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    } else {
+        state.mode = mode;
+    }
     const root = document.documentElement;
     if (mode === 'dark') {
         root.style.setProperty('--bg-light', '#0f0f1a');
@@ -49,11 +54,13 @@ function applyMode(mode) {
         root.style.setProperty('--bottom-bg', 'rgba(255,255,255,0.9)');
         root.style.setProperty('--bottom-text', '#6b7280');
         document.body.style.background = '#f0f2f5';
-    } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyMode(prefersDark ? 'dark' : 'light');
     }
 }
+
+const systemScheme = window.matchMedia('(prefers-color-scheme: dark)');
+systemScheme.addEventListener('change', () => {
+    if (state.mode === 'auto') applyMode('auto');
+});
 
 function applyFontSize(size) {
     state.fontSize = size;
@@ -172,5 +179,6 @@ export function initSettings() {
     });
 
     initTilt();
+    applyMode(state.mode);
     applyEffects();
 }
